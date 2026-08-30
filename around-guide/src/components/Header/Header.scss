@@ -1,0 +1,156 @@
+@font-face {
+    font-family: "Manrope";
+    src: url("/around-guide/src/assets/fonts/Manrope-Bold.ttf");
+
+}
+
+@font-face {
+    font-family: "Monsterrat";
+    src: url("/around-guide/src/assets/fonts/Montserrat-Medium.ttf");
+}
+
+.header {
+    position: absolute;
+    z-index: 1;
+    
+    top: 90px;
+    left: 90px;
+    right: 90px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   
+    
+
+    color: white;
+
+    &__logotype{
+        padding-right: 250px;
+    }
+
+    &__navigate{
+        display: flex;
+        gap: 50px;
+        font-family: "Manrope", sans-serif;
+        font-weight: 800;
+        margin-right: 50px;
+        font-size: 20px;
+        
+        :hover {
+            transition: 0.3s ease-in;
+            transform: scale(1.1);
+        }
+    }
+
+
+    &__placeholder{
+        margin-right: 50px;
+    }
+    &__placeholder-main{
+        
+        width: 230px;
+        height: 40px;
+        font-family: "Monsterrat", sans-serif;
+        font-size: 15px;
+        border: 1px solid rgba(255, 255, 255, 0.22);
+        border-radius: 18px;
+
+        // Light = 80%
+        background: rgba(255, 255, 255, 0.08);
+
+        // Frost = 4
+        backdrop-filter: blur(4px) saturate(180%);
+        -webkit-backdrop-filter: blur(4px) saturate(180%);
+
+        // Свет по краю стекла
+        box-shadow:
+            inset 0 1px 1px rgba(255, 255, 255, 0.45),
+            inset 0 -1px 1px rgba(255, 255, 255, 0.08),
+            0 8px 30px rgba(0, 0, 0, 0.15);
+
+        color: white;
+        border-radius: 50px;
+        padding: 5%;  
+        outline: none;
+        border-color: transparent;
+    }
+    &__placeholder-main:focus{
+        outline: none;
+        border-color: transparent;
+    }
+
+    &__log_in{
+        width: 100px;
+        height: 40px;
+        border-radius: 20px;
+        font-family: "Manrope", sans-serif;
+        font-weight: 800;
+        font-size: 14px;
+        background: none;
+        
+        
+        color: white;
+        border-color: #24D8C1;
+        cursor: pointer;
+        &:hover{
+            transition: 0.3s ease-in;
+            color: #24D8C1;
+        }
+    }
+
+}
+
+.language {
+    position: relative;
+
+    &__button {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+
+        padding: 10px 14px;
+
+        background: none;
+        border: none;
+        color: white;
+        font-family: "Manrope", sans-serif;
+        font-weight: 800;
+        
+        cursor: pointer;
+    }
+
+    &__dropdown {
+        
+        position: absolute;
+        top: calc(100% + 5px);
+        right: 0;
+
+        display: flex;
+        flex-direction: column;
+
+        min-width: 100px;
+
+        padding: 5px;
+
+        background: white;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+
+        button {
+            padding: 10px;
+
+            background: none;
+            border: none;
+
+            text-align: left;
+            cursor: pointer;
+
+            &:hover {
+                background: #f3f3f3;
+            }
+        }
+    }
+}

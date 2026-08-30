@@ -1,0 +1,11 @@
+{
+    "header": 
+    {
+        "main" : "MAIN",
+        "guide_info" : "GUIDE INFORMATION",
+        "about_us" : "ABOUT US",
+        "hotel" : "HOTEL",
+        "log_in": "LOG IN",
+        "country": "COUNTRY..."
+    }
+}

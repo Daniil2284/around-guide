@@ -1,4 +1,4 @@
-![Static Badge][text](https://www.geeksforgeeks.org/node-js/how-to-download-and-install-node-js-and-npm/)
+![Static Badge][install guide](https://www.geeksforgeeks.org/node-js/how-to-download-and-install-node-js-and-npm/)
 
 ## install (Linux/windows)
 1. ```check your install npm and node```

@@ -1,3 +1,18 @@
+@use "../Header/Header.scss" as *;
+
+@font-face {
+    font-family: "Caveat";
+    src: url(../../assets/fonts/Caveat-Bold.ttf);
+}
+
+@font-face {
+    font-family: "Gilroy";
+    src: url(../../assets/fonts/Gilroy/Gilroy-Medium_0.ttf);
+}
+
+$font-radius:"Caveat", sans-serif ;
+$font-radius-color: #FFD773;
+
 .hero {
     min-height: 100vh;
     
@@ -7,4 +22,30 @@
     background-position: center 0%;
     background-size: cover;
     overflow: hidden;
+    padding-top: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &__travel_p{
+        position: absolute;
+        top: 35%;
+        left: 20%;
+        font-family: $font-radius;
+        color: $font-radius-color;
+        font-size: 24px;
+
+    }
+    &__travel_desc{
+        width: 900px;
+        font-family: "Gilroy", sans-serif;
+        letter-spacing: 5%;
+        font-size: 96px;
+        color: white;
+
+        display: block;
+    }
+    &__line1{
+        margin-left: 50%;
+        
+    }
 }

@@ -10,10 +10,12 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "i18next": "^26.4.0",
+    "framer-motion": "^13.1.1",
+    "i18next": "^26.4.1",
     "react": "^19.2.8",
     "react-dom": "^19.2.8",
-    "react-i18next": "^17.0.12"
+    "react-i18next": "^17.0.12",
+    "sass": "^1.103.1"
   },
   "devDependencies": {
     "@types/react": "^19.2.18",

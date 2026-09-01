@@ -5,9 +5,11 @@
 }
 
 @font-face {
-    font-family: "Monsterrat";
+    font-family: "Montserrat";
     src: url("/around-guide/src/assets/fonts/Montserrat-Medium.ttf");
 }
+$Montserrat-font: "Montserrat", sans-serif !default;
+$main-font: "Manrope", sans-serif !default;
 
 .header {
     position: absolute;
@@ -21,8 +23,6 @@
     align-items: center;
     justify-content: center;
    
-    
-
     color: white;
 
     &__logotype{
@@ -32,7 +32,7 @@
     &__navigate{
         display: flex;
         gap: 50px;
-        font-family: "Manrope", sans-serif;
+        font-family: $main-font;
         font-weight: 800;
         margin-right: 50px;
         font-size: 20px;
@@ -51,7 +51,7 @@
         
         width: 230px;
         height: 40px;
-        font-family: "Monsterrat", sans-serif;
+        font-family: $Montserrat-font;
         font-size: 15px;
         border: 1px solid rgba(255, 255, 255, 0.22);
         border-radius: 18px;
@@ -84,7 +84,7 @@
         width: 100px;
         height: 40px;
         border-radius: 20px;
-        font-family: "Manrope", sans-serif;
+        font-family: $main-font;
         font-weight: 800;
         font-size: 14px;
         background: none;
@@ -114,7 +114,7 @@
         background: none;
         border: none;
         color: white;
-        font-family: "Manrope", sans-serif;
+        font-family: $main-font;
         font-weight: 800;
         
         cursor: pointer;

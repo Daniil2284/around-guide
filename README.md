@@ -7,6 +7,7 @@
     i18next -v
 2. ```if first from library does't working or not install. Then go badge or use next command```
     if no (i18next) npm install i18next
+    and npm install framer-motion
 3. ```how clone repo```
     use command: git clone 
 4. ```started server for frontend react```

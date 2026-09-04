@@ -10,6 +10,8 @@
 }
 $Montserrat-font: "Montserrat", sans-serif !default;
 $main-font: "Manrope", sans-serif !default;
+$body-color: #E17754;
+$background-color: #134B44;
 
 .header {
     position: absolute;
@@ -88,14 +90,24 @@ $main-font: "Manrope", sans-serif !default;
         font-weight: 800;
         font-size: 14px;
         background: none;
+
         
-        
+        box-shadow: none;
+        outline: none;
         color: white;
-        border-color: #24D8C1;
+        border: 2px solid #24D8C1;
         cursor: pointer;
         &:hover{
             transition: 0.3s ease-in;
             color: #24D8C1;
+        }
+        &:focus {
+            box-shadow: none;
+            outline: none;
+        }
+        &:focus-visible {
+            box-shadow: none;
+            outline: none;
         }
     }
 

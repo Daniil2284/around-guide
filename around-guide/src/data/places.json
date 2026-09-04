@@ -1,0 +1,35 @@
+[
+    {
+        "name": "BALI",
+        "images": "./src/assets/images_chess/BALI.jpg"
+    },
+    {
+        "name": "FRANCE",
+        "images": "./src/assets/images_chess/FRANCE.jpg"
+    },
+    {
+        "name": "THAILAND",
+        "images": "./src/assets/images_chess/THAILAND.jpg"
+    },
+    {
+        "name": "SWITZERLAND",
+        "images": "./src/assets/images_chess/SWITZERLAND.jpg"
+    },
+    {
+        "name": "VIETNAM",
+        "images": "./src/assets/images_chess/VIETNAM.jpg"
+    },
+    {
+        "name": "SPAIN",
+        "images": "./src/assets/images_chess/SPAIN.jpg"
+    },
+    {
+        "name": "UAE",
+        "images": "./src/assets/images_chess/UAE.jpg"
+    },
+    {
+        "name": "CHEZH",
+        "images": "./src/assets/images_chess/FRANCE.jpg"
+    }
+
+]

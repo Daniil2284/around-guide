@@ -7,9 +7,12 @@
 
 @font-face {
     font-family: "Gilroy";
-    src: url(../../assets/fonts/Gilroy/Gilroy-Medium_0.ttf);
+    src: url(../../assets/fonts/Gilroy/Gilroy-Semibold_0.ttf);
+
 }
 
+
+$font-family-Gil: "Gilroy", sans-serif;
 $font-radius:"Caveat", sans-serif ;
 $font-radius-color: #FFD773;
 
@@ -19,33 +22,46 @@ $font-radius-color: #FFD773;
     background-image: url(./img/background_header.jpg);
     position: relative;
     background-repeat: no-repeat;
-    background-position: center 0%;
+    background-position: center 95%;
     background-size: cover;
     overflow: hidden;
-    padding-top: 200px;
+    
     display: flex;
     justify-content: center;
     align-items: center;
+    box-sizing: border-box;
+
+
+    
+    &__main {
+        position: absolute;
+    }
     &__travel_p{
         position: absolute;
-        top: 35%;
-        left: 20%;
+        top: -10%;
+        left: -10%;
+        margin: 0;
         font-family: $font-radius;
         color: $font-radius-color;
         font-size: 24px;
 
     }
     &__travel_desc{
-        width: 900px;
-        font-family: "Gilroy", sans-serif;
+        width: 950px;
+        font-family: $font-family-Gil;
         letter-spacing: 5%;
         font-size: 96px;
-        color: white;
-
-        display: block;
+        color: white;   
     }
     &__line1{
+        display: flex;
+        justify-content: center;
+        align-items: center;
         margin-left: 50%;
         
     }
+    &__line2 {
+        background-color: #e75b28;
+    }
+
 }

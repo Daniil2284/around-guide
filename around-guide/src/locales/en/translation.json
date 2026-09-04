@@ -12,5 +12,9 @@
         "main_linea_1": "TRAVEL THE",
         "main_linea_2": "WORLD",
         "main_linea_3": "WITH US"
+    },
+    "routes": {
+        "headline": "POPULAR DESTINATIONS",
+        "desc": "Open for you the most inspiring places from around the world"
     }
 }

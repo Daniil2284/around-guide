@@ -2,7 +2,7 @@
 
 @font-face {
     font-family: "Caveat";
-    src: url(../../assets/fonts/Caveat-Bold.ttf);
+    src: url(../../assets/fonts/Caveat/Caveat-Bold.ttf);
 }
 
 @font-face {
@@ -22,7 +22,7 @@ $font-radius-color: #FFD773;
     background-image: url(./img/background_header.jpg);
     position: relative;
     background-repeat: no-repeat;
-    background-position: center 95%;
+    background-position: center 90%;
     background-size: cover;
     overflow: hidden;
     
@@ -35,6 +35,7 @@ $font-radius-color: #FFD773;
     
     &__main {
         position: absolute;
+        margin-top: 200px;
     }
     &__travel_p{
         position: absolute;

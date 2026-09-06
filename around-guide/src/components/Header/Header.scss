@@ -1,17 +1,28 @@
 @font-face {
-    font-family: "Manrope";
-    src: url("/around-guide/src/assets/fonts/Manrope-Bold.ttf");
-
+    font-family: "Manrope" ;
+    src: url("../../assets/fonts/Manrope//Manrope-ExtraBold.ttf") format("truetype");
+    font-weight: 700;
+    font-style: normal;
 }
 
 @font-face {
-    font-family: "Montserrat";
-    src: url("/around-guide/src/assets/fonts/Montserrat-Medium.ttf");
+    font-family: "Montserrat" ;
+    src: url("../../assets/fonts/Monsterrat/Montserrat-Medium.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
 }
+@font-face {
+    font-family: "Forum" ;
+    src: url("../../assets/fonts/Forum/Forum-Regular.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+}
+
 $Montserrat-font: "Montserrat", sans-serif !default;
 $main-font: "Manrope", sans-serif !default;
 $body-color: #E17754;
 $background-color: #134B44;
+$font-headline-desc: "Forum", sans-serif !default;
 
 .header {
     position: absolute;

@@ -26,7 +26,14 @@ function Routes() {
                             alt={place.name} />
 
                             <div className="route__name">
-                                <h3>{place.name}</h3>
+                                <a className="route__link" href="">
+                                    <p className="route__id">{place.id}</p>
+                                    <h3 className="route__title">{place.name}</h3>
+                                    <p className="route__more-info">{t("routes.more")} <img className="route__arrow" src="./src/assets/icons/arrow.svg" alt="" /></p>
+                                </a>
+                                
+                                
+                                
                             </div>
                         </div>
                     ))}

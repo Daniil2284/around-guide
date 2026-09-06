@@ -15,6 +15,7 @@
     },
     "routes": {
         "headline": "POPULAR DESTINATIONS",
-        "desc": "Open for you the most inspiring places from around the world"
+        "desc": "Open for you the most inspiring places from around the world",
+        "more": "More info"
     }
 }

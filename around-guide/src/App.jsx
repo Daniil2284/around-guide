@@ -7,10 +7,10 @@ function App() {
         <>
             <Header />
             <Hero />
-            <Routes/>
+            <Routes />
             <main>
                 
-                <h1>Around Guide</h1>
+                {/* <h1>Around Guide</h1> */}
                 
             </main>
         </>

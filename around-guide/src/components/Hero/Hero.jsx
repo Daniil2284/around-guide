@@ -16,7 +16,7 @@ function Hero(){
                 }}
                 animate={{
                     
-                    scale:[1, 1.02, 1]
+                    scale:[1, 1.05, 1]
                     
                 }}
                 transition={{

@@ -17,5 +17,14 @@
         "headline": "POPULAR DESTINATIONS",
         "desc": "Open for you the most inspiring places from around the world",
         "more": "More info"
+    },
+    "about": {
+        "headline": "ABOUT US",
+        "title_1": "TRAVEL WITH CONFIDENCE, AND WE’LL TAKE CARE OF EVERYTHING ELSE.",
+        "desc_1": "We will help you find the perfect accommodation, provide up‑to‑date exchange rates, suggest the best coworking spaces, tell you about medical services and insurance, and also reveal to you the most interesting places, entertainment options, and hidden gems of any city.",
+        "title_2": "WHY DO ALL CHOOSE US?",
+        "desc_2": "We combine all the necessary tools for travel in one place. By doing so, we create an ecosystem. You no longer need to search for dozens of different services. We save your time and make every trip easier, safer, and more comfortable.",
+        "title_3": "IMPROVING TOGETHER WITH OUR USERS",
+        "desc_3" : "Each update is based on the real needs of travelers. We regularly update the platform, adding useful features, improving performance, and expanding the available services."
     }
 }

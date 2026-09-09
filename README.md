@@ -11,5 +11,5 @@
 3. ```how clone repo```
     use command: git clone 
 4. ```started server for frontend react```
-    use cd for that to get in file. Check your folder with help command ```dir``` and write next command ```npm start```
+    use cd for that to get in file. Check your folder with help command ```dir``` and write next command ```npm run dev```
 

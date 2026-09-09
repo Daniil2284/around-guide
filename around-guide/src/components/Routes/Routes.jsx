@@ -8,7 +8,8 @@ function Routes() {
     const {t, i18n } = useTranslation();
 
     const {scrollY} = useScroll();
-    const y = useTransform(scrollY, [2000,3000], [0,600]); 
+    const y = useTransform(scrollY, [2000,3000], [-200,700]); 
+    
     
     return (
         <div className="page">
@@ -62,6 +63,30 @@ function Routes() {
                                 <div className="aboutUs__test">
 
                                     <div className="aboutUs__line"></div>
+                                    <div className="aboutUs__dots">
+
+                                        <motion.img className="aboutUs__ellipse" animate={{
+                                            scale:[1,1.1,1]
+                                        }}
+                                        transition={{
+                                            duration: 1.5,
+                                            repeat: Infinity,
+                                            ease:"easeInOut"
+                                        }}
+                                        src="../../src/assets/about/ellipse_air.svg" alt="" />
+
+                                        <motion.img className="aboutUs__ellipse" animate={{
+                                            scale:[1,1.1,1]
+                                        }}
+                                        transition={{
+                                            duration: 1.5,
+                                            repeat: Infinity,
+                                            ease:"easeInOut"
+                                        }}
+                                        src="../../src/assets/about/ellipse_air.svg" alt="" />
+
+                                        
+                                    </div>
                                     <motion.img className="aboutUs__airplane" src="../../src/assets/about/airplane.svg" style={{y}} alt="" />
                                 </div>
                             
@@ -79,9 +104,35 @@ function Routes() {
                                 <img className="aboutUs__img_3" src="../../src/assets/about/img_3.png" alt="aboutUS" />
                             </div>
                       
-                            <div className="aboutUs__line">
+                                <div className="aboutUs__test">
 
-                            </div>
+                                    <div className="aboutUs__line"></div>
+                                    <div className="aboutUs__dots">
+
+                                        <motion.img className="aboutUs__ellipse" animate={{
+                                            scale:[1,1.1,1]
+                                        }}
+                                        transition={{
+                                            duration: 1.5,
+                                            repeat: Infinity,
+                                            ease:"easeInOut"
+                                        }}
+                                        src="../../src/assets/about/ellipse_air.svg" alt="" />
+
+                                        <motion.img className="aboutUs__ellipse" animate={{
+                                            scale:[1,1.1,1]
+                                        }}
+                                        transition={{
+                                            duration: 1.5,
+                                            repeat: Infinity,
+                                            ease:"easeInOut"
+                                        }}
+                                        src="../../src/assets/about/ellipse_air.svg" alt="" />
+
+                                        
+                                    </div>
+                                   
+                                </div>
 
                         </div>
                     </div>

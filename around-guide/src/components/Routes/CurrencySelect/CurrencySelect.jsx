@@ -1,8 +1,26 @@
-import { useState } from "react";
+import { useState,useEffect, useRef } from "react";
 
 function CurrencySelect({ currency, currencies, onChange, t }) {
 
     const [isOpen, setIsOpen] = useState(false);
+
+    const currencyRef = useRef(null);
+
+    useEffect(() => {
+        const handleClickOutside = (event)=> {
+            if (currencyRef.current &&
+                !currencyRef.current.contains(event.target)
+            ) {
+                setIsOpen(false);
+            }
+        };
+
+        document.addEventListener("mousedown",handleClickOutside);
+
+        return () => {
+            document.removeEventListener("mousedown", handleClickOutside);
+        };
+    },[])
 
     const handleChange = (currency) => {
         onChange(currency);
@@ -10,7 +28,7 @@ function CurrencySelect({ currency, currencies, onChange, t }) {
     };
 
     return (
-        <div className="currency">
+        <div className="currency" ref={currencyRef}>
 
             <button
                 className="currency__selected"

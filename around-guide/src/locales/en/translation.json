@@ -26,5 +26,25 @@
         "desc_2": "We combine all the necessary tools for travel in one place. By doing so, we create an ecosystem. You no longer need to search for dozens of different services. We save your time and make every trip easier, safer, and more comfortable.",
         "title_3": "IMPROVING TOGETHER WITH OUR USERS",
         "desc_3" : "Each update is based on the real needs of travelers. We regularly update the platform, adding useful features, improving performance, and expanding the available services."
+    },
+    "converter" : {
+        "headline": "CONVERTER CURRENCY",
+        "title": "Exchanging currency is as simple as checking a flight — the rate, direction, and board are all in one talon.",
+        "card_title-take": "FROM",
+        "card_title-receive": "TO"
+    },
+    "converter-card": {
+        "USD": "USD - US Dollar",
+        "EUR": "EUR - Euro",
+        "GBP": "GBP - British Pounds",
+        "JPY": "JPY — Japanese Yen",
+        "THB": "THB — Thai Baht",
+        "TRY": "TRY — Turkish Lira",
+        "AED": "AED — UAE Dirham",
+        "GEL": "GEL — Georgian Lari",
+        "MXN": "MXN — Mexican Peso",
+        "VND": "VND — Vietnamese Dong",
+        "IDR": "IDR — Indonesian Rupiah",
+        "CNY": "CNY — Chinese Yuan"
     }
 }

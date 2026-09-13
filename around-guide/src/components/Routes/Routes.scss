@@ -8,7 +8,16 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: "IBM Plex Mono";
+    src: url("../../assets/fonts/IBM-PLEX/IBMPlexMono-Bold.ttf");
+    font-style: normal;
+}
+
+$color-sym: #A0CCC7;
+$font-converter-currency: "IBM Plex Mono", sans-serif;
 $font-route-name: "Special Elite", sans-serif;
+
 .page {
     background-image: url("../../assets/for_background.svg");
     background-position: center 0%;
@@ -266,4 +275,172 @@ $font-route-name: "Special Elite", sans-serif;
     }
 
 
+}
+
+.convertor {
+    
+    &__info {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: stretch;
+
+    }
+    &__headline {
+        display: flex;
+        justify-content: center;   
+        font-family: $main-font;
+        font-size: 48px;
+        color: $body-color;
+        margin-bottom: 20px;
+    }
+    &__title {
+        display: flex;
+        justify-content: center;   
+        color: white;
+        opacity: 0.7;
+        margin-bottom: 100px;
+        font-size: 18px;
+        width: 700px;
+        align-self: center;
+        text-align: center;
+    }
+}
+
+.test {
+    display: flex;
+    justify-content: center;
+}
+.calc {
+    background-image: url(../../src/assets/convertor/convertor.png);
+    height: 50vh;
+    width: 1150px;
+    background-repeat: no-repeat;
+    position: relative;
+
+    &__content {
+        position: absolute;
+        top: 16%;
+        left: 8%;
+        padding-bottom: 80px;
+
+    }
+
+    &__label {
+        font-size: 18px;
+        letter-spacing: 3px;
+        color: white;
+        opacity: .7;
+        font-family: $main-font;
+        display: flex;
+        margin-bottom: 10px;
+    }
+    &__field{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 900px;
+        margin-bottom: 40px;
+        
+    }
+
+
+}
+
+.currency {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    
+
+    &__selected{
+        display: flex;
+        align-items: center;
+        gap: 8px;
+
+        padding: 10px 14px;
+
+        background: none;
+        border: none;
+        color: white;
+        font-family: $font-converter-currency;
+        font-size: 22px;
+        font-weight: 800;
+        
+        cursor: pointer;
+    }
+
+    &__sym {
+        font-family: $font-converter-currency;
+        font-size: 20px;
+        color: $color-sym ;
+    }
+
+    &__input {
+        font-family: $font-converter-currency;
+        font-size: 22px;
+        color: white;
+        &::placeholder {
+            color: white;
+        }
+    }
+    
+    &__options {
+        position: absolute;
+        top: calc(100% + 5px);
+        right: 0;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        left: 0%;
+
+        max-width: 200px;
+
+        padding: 5px;
+
+        background: white;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+
+        div {
+            padding: 10px;
+
+            background: none;
+            border: none;
+            z-index: 999;
+            text-align: left;
+            cursor: pointer;
+            &:hover {
+                background: #f3f3f3;
+            }
+        }
+
+    }
+    
+}
+.currency__input{
+    background: none;
+    border: none;
+    outline: none;
+    text-align: right;
+
+    -moz-appearance: textfield;
+
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+}
+
+.currency__flag {
+    background-color: #43978C;
+    padding: 5px;
+    border-radius: 50%;
+    width: 50px;
 }

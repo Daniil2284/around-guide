@@ -344,6 +344,43 @@ $font-route-name: "Special Elite", sans-serif;
         
     }
 
+    &__swapp {
+        display: flex;
+        justify-content: center;
+        position: absolute;
+        align-items: center;
+
+        left: 50%;
+        top: 28%;
+
+        
+    }
+    
+    &__swapp_btn {
+        
+        border: none;
+        border-radius: 50%;
+        cursor: pointer;
+
+        &::after {
+            content: "";
+
+            position: absolute;
+            inset: 0;
+
+            border-radius: 50%;
+
+            box-shadow: 0 0 0 8px rgba(143, 233, 210, 0.10);
+
+            transition: box-shadow 0.3s ease-in-out;
+        }
+
+        &:hover::after {
+            box-shadow: 0 0 0 20px rgba(143, 233, 210, 0.10);
+        }
+
+    }
+
 
 }
 

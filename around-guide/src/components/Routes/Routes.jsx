@@ -1,8 +1,9 @@
-import { useEffect, useRef, useState } from "react";
+import { Children, useEffect, useRef, useState } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useTranslation } from "react-i18next";
 import USA from "../../assets/icons_flag/USA.png";
 import EUR from "../../assets/icons_flag/EUR.png";
+import IDR from "../../assets/icons_flag/IDR.png";
 import "./Routes.scss";
 import CurrencySelect from "./CurrencySelect/CurrencySelect";
 import places from "../../data/places.json"
@@ -16,8 +17,7 @@ function Routes() {
     const y = useTransform(scrollY, [2000,3000], [-200,700]); 
     
     const [isOpen, setIsOpen] = useState(false); 
-    const [selectedCurrency, setSelectedCurrency] = useState("USD");
-    const [toCurrency, setToCurrency] = useState("EUR");
+ 
 
     const [amount,setAmount] = useState("");
     const [result, setResult] = useState("");
@@ -26,14 +26,16 @@ function Routes() {
     //     USD_EUR : 0.86,
     //     EUR_USD : 1.16
     // };
+
+    
     const rate = 0.86187
     useEffect(() => {
         const converted = Number(amount) * rate;
         setResult(converted);
     }, [amount]);
     
-    const test = Math.trunc(result);
-    const transFormedResult = String(test).replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+    const res = Math.trunc(result);
+    const transFormedResult = String(res).replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
     const currencyRef = useRef(null);
     useEffect(() => {
@@ -85,10 +87,34 @@ function Routes() {
             name: t("converter-card.EUR"),
             icon: EUR,
             sym: "€"
+        },
+        IDR : {
+            name: t("converter-card.IDR"),
+            icon: IDR,
+            sym: "Rp"
         }
     };
 
+    //reverse button
+    // const SwappButton = ({onSwap}) => {
+        
+    //     const handleClick = () => {
+    //         setIsRotate(prev => !prev);
+    //         onSwap();
+    //     };
+    // }
+    const [selectedCurrency, setSelectedCurrency] = useState("USD");
+    const [toCurrency, setToCurrency] = useState("EUR");
     
+    const [isRotate, setIsRotate] = useState(false);
+
+    const swap = () => {
+        setIsRotate(prev => !prev);        
+        setSelectedCurrency(toCurrency);
+        setToCurrency(selectedCurrency);
+        setAmount(String(Math.trunc(result)));
+        
+    };
     
 
     const transFormedText = amount.replace(/\B(?=(\d{3})+(?!\d))/g, ".");
@@ -231,81 +257,54 @@ function Routes() {
 
                             <div className="calc__content">
                                 
-                                                             
-                                    <span className="calc__label">{t("converter.card_title-take")}</span>
+                                <div className="calc__swapp">
+
+                                    <button onClick={swap} 
+                                    style={{transform: isRotate ? 'rotate(180deg)' : 'rotate(0deg)',
+                                        transition: "transform 0.3s ease"
+                                    }}
+                                    className="calc__swapp_btn"><img src="../../src/assets/convertor/swapper_icon.svg" alt="" /></button>
                                     
-                                   
-                                        
-                                        {/* <button className="currency__selected"
-                                        onClick={() => setIsOpen(!isOpen)}>
-                                            <div className="currency__flag">
-                                                <img className="tested" src={currencies[selectedCurrency].icon} alt="" />
-                                            </div>
-                                            {currencies[selectedCurrency].name}
-                                            <span>⌄</span>
-                                        </button>
-                                        
-                                        {isOpen && (
+                                </div>
+                                           
+                                <span className="calc__label">{t("converter.card_title-take")}</span>
+                                
+                                
+                                    
+                             
+                                    
+                                    <div className="calc__field">
 
-                                        <div className="currency__options">
-                                            <div onClick={() => handleChange("USD")}>{t("converter-card.USD")}</div>
-                                            <div onClick={() => handleChange("EUR")}>{t("converter-card.EUR")}</div>
-                                            </div>
-                                            )} */}
-                                        
-                                        <div className="calc__field">
-
-                                                <CurrencySelect
-                                                    currency={selectedCurrency}
-                                                    currencies={currencies}
-                                                    onChange={setSelectedCurrency}
-                                                    t={t}
-                                                />
-                                            <div className="currency__amout-side">
-                                                <span className="currency__sym" >{currencies[selectedCurrency].sym}</span>
-                                                <input 
-                                                    className="currency__input"
-                                                    type="text"
-                                                    inputMode="numeric"
-                                                    min={"0"}
-                                                    max={"999999999"}
-                                                    placeholder="0"
-                                                    value={transFormedText}
-                                                    onChange={(e) => {
-                                                        const value = e.target.value.replace(/\D/g, "");
-                                                        setAmount(value);
-                                                    }}
-                                                />
+                                            <CurrencySelect
+                                                currency={selectedCurrency}
+                                                currencies={currencies}
+                                                onChange={setSelectedCurrency}
+                                                t={t}
+                                            />
+                                        <div className="currency__amout-side">
+                                            <span className="currency__sym" >{currencies[selectedCurrency].sym}</span>
+                                            <input 
+                                                className="currency__input"
+                                                type="text"
+                                                inputMode="numeric"
+                                                min={"0"}
+                                                max={"999999999"}
+                                                placeholder="0"
+                                                value={transFormedText}
+                                                onChange={(e) => {
+                                                    const value = e.target.value.replace(/\D/g, "");
+                                                    setAmount(value);
+                                                }}
+                                            />
 
 
-                                            </div> 
+                                        </div> 
 
-                                        </div>
+                                    </div>
 
                             
                                 
                                     <span className="calc__label">{t("converter.card_title-receive")}</span>
-
-
-
-                                
-                                    
-                                     {/* <button className="currency__selected"
-                                    onClick={() => setIsOpen(!isOpen)}>
-                                        <div className="currency__flag">
-                                            <img className="tested" src={currencies[toCurrency].icon} alt="" />
-                                        </div>
-                                        {currencies[toCurrency].name}
-                                        <span>⌄</span>
-                                    </button>
-                                    
-                                    {isOpen && (
-
-                                    <div className="currency__options">
-                                        <div onClick={() => handleChange("USD")}>{t("converter-card.USD")}</div>
-                                        <div onClick={() => handleChange("EUR")}>{t("converter-card.EUR")}</div>
-                                    </div>
-                                    )} */}
 
 
                                     <div className="calc__field">
@@ -351,6 +350,6 @@ function Routes() {
         </div>
 
     );
-}
+};
 
 export default Routes;

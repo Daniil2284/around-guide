@@ -7,7 +7,8 @@ import IDR from "../../assets/icons_flag/IDR.png";
 import "./Routes.scss";
 import CurrencySelect from "./CurrencySelect/CurrencySelect";
 import places from "../../data/places.json"
-
+import Rate from "./Rate/Rate";
+import ScrollMenu from "./ScrollMenu/ScrollMenu";
 
 
 function Routes() {
@@ -115,6 +116,87 @@ function Routes() {
         setAmount(String(Math.trunc(result)));
         
     };
+
+
+    const course_info = [
+
+        {
+            "id": 1,
+            "flag": USA,
+            "from": "USD",
+            "to": "EUR"
+        },
+
+        {
+            "id": 2,
+            "flag": USA,
+            "from": "USD1",
+            "to": "EUR2"
+        },
+        {
+            "id": 3,
+            "flag": USA,
+            "from": "USD",
+            "to": "EUR"
+        },
+        {
+            "id": 4,
+            "flag": USA,
+            "from": "USD",
+            "to": "EUR"
+        },
+
+        {
+            "id": 5,
+            "flag": USA,
+            "from": "USD",
+            "to": "EUR"
+        },
+        {
+            "id": 6,
+            "flag": USA,
+            "from": "USD",
+            "to": "EUR"
+        },
+                {
+            "id": 7,
+            "flag": USA,
+            "from": "USD",
+            "to": "EUR"
+        },
+
+        {
+            "id": 8,
+            "flag": USA,
+            "from": "USD1",
+            "to": "EUR2"
+        },
+        {
+            "id": 9,
+            "flag": USA,
+            "from": "USD",
+            "to": "EUR"
+        },
+        {
+            "id": 10,
+            "flag": USA,
+            "from": "USD",
+            "to": "EUR"
+        },
+
+        {
+            "id": 11,
+            "flag": USA,
+            "from": "USD",
+            "to": "EUR"
+        },
+        {
+            "id": 12,
+            "flag": USA,
+            "from": "USD",
+            "to": "EUR"
+        }
+    ]
     
 
     const transFormedText = amount.replace(/\B(?=(\d{3})+(?!\d))/g, ".");
@@ -254,7 +336,7 @@ function Routes() {
 
                         <div className="calc">
 
-
+                            <img className="calc__background-img" src="../../src/assets/convertor/convertor.png" alt=""></img>
                             <div className="calc__content">
                                 
                                 <div className="calc__swapp">
@@ -268,11 +350,7 @@ function Routes() {
                                 </div>
                                            
                                 <span className="calc__label">{t("converter.card_title-take")}</span>
-                                
-                                
-                                    
-                             
-                                    
+                                      
                                     <div className="calc__field">
 
                                             <CurrencySelect
@@ -301,11 +379,8 @@ function Routes() {
                                         </div> 
 
                                     </div>
-
-                            
                                 
                                     <span className="calc__label">{t("converter.card_title-receive")}</span>
-
 
                                     <div className="calc__field">
 
@@ -331,16 +406,35 @@ function Routes() {
                                         </div> 
                                     </div>
                                 
+                                <div className="rate_info">
+
+                                    <Rate
+                                        fromCurrency= {selectedCurrency}
+                                        toCurrency = {toCurrency}
+                                        rate = {86}
+                                        change = {-1.24}
+                                    />
+                                        
+                                </div>
                                 
 
 
-                                
                                 
                                
 
                             </div>
+                                
 
                         </div>
+                    </div>
+
+                    
+                    <div className="course__info">
+
+                        <ScrollMenu
+                            items = {course_info}
+                        
+                        />
                     </div>
 
 

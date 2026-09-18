@@ -1,14 +1,19 @@
 import { Children, useEffect, useRef, useState } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useTranslation } from "react-i18next";
-import USA from "../../assets/icons_flag/USA.png";
-import EUR from "../../assets/icons_flag/EUR.png";
-import IDR from "../../assets/icons_flag/IDR.png";
 import "./Routes.scss";
 import CurrencySelect from "./CurrencySelect/CurrencySelect";
 import places from "../../data/places.json"
+import { getCurrencyRate } from "./API/currencyApi";
+import currenciesData from "../../data/currencies.json";
 
+import rate_line from "./rate/rate_line";
 
+//icons
+import USA from "../../assets/icons_flag/USA.png";
+import EUR from "../../assets/icons_flag/EUR.png";
+import IDR from "../../assets/icons_flag/IDR.png";
+import RUB from "../../assets/icons_flag/RU.png";
 
 function Routes() {
     const {t, i18n } = useTranslation();
@@ -20,17 +25,30 @@ function Routes() {
  
 
     const [amount,setAmount] = useState("");
-    const [result, setResult] = useState("");
+    const [result, setResult] = useState("0");
     
-    // const rates = {
-    //     USD_EUR : 0.86,
-    //     EUR_USD : 1.16
-    // };
+    const rate = {
+        USD_EUR : 0.86187,
+        EUR_USD : 1.16
+    };
 
     
-    const rate = 0.86187
+    // const rate = 0.86187
     useEffect(() => {
-        const converted = Number(amount) * rate;
+        
+        const converted = Number(amount) * rate.USD_EUR;
+        // для API
+        // const calculate = async () => {
+        //     const rate = await getCurrencyRate(
+        //         selectedCurrency,
+        //         toCurrency
+        //     );
+            
+        //     setResult(converted);
+        // };
+        // if (amount) {
+        //     calculate();
+        // }
         setResult(converted);
     }, [amount]);
     
@@ -55,8 +73,6 @@ function Routes() {
             };
     }, []);
 
-    
-
     //результат конверта
     // const convert = () => {
 
@@ -77,23 +93,23 @@ function Routes() {
     //     setResult(Number(amount) * rate);
     // };
 
-    const currencies = {
-        USD : {
-            name: t("converter-card.USD"),
-            icon: USA,
-            sym: "$"
-        },
-        EUR : {
-            name: t("converter-card.EUR"),
-            icon: EUR,
-            sym: "€"
-        },
-        IDR : {
-            name: t("converter-card.IDR"),
-            icon: IDR,
-            sym: "Rp"
-        }
+    const icons = {
+        USA,
+        EUR,
+        IDR,
+        RUB
     };
+
+    const currencies = Object.fromEntries(
+        Object.entries(currenciesData).map(([code, currency]) =>[
+            code,
+            {
+                name: t(currency.translationKey),
+                icon: icons[currency.icon],
+                sym: currency.symbol
+            }
+        ])
+    );
 
     //reverse button
     // const SwappButton = ({onSwap}) => {
@@ -330,12 +346,6 @@ function Routes() {
 
                                         </div> 
                                     </div>
-                                
-                                
-
-
-                                
-                                
                                
 
                             </div>

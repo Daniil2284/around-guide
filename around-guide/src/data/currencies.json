@@ -1,0 +1,23 @@
+{
+    "USD" : {
+        "translationKey": "converter-card.USD",
+        "symbol": "$",
+        "icon": "USA"
+    },
+    "EUR": {
+        "translationKey": "converter-card.EUR",
+        "symbol": "€",
+        "icon": "EUR"
+    },
+    "IDR" : {
+        "translationKey": "converter-card.IDR",
+        "symbol": "Rp",
+        "icon": "IDR"
+    },
+    "RUB" : {
+        "translationKey" : "converter-card.RUB",
+        "symbol": "₽",
+        "icon": "RUB"
+    }
+
+}

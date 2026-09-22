@@ -1,0 +1,63 @@
+@font-face {
+    font-family: "IBM Plex Mono";
+    src: url("../../../assets/fonts/IBM-PLEX/IBMPlexMono-Medium.ttf");
+    font-style: normal;
+}
+$font-scrollMenu: "IBM Plex Mono", sans-serif;
+
+
+.scrollMenu {
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    &__menu {
+        display: flex;
+        overflow-x: auto;
+        width: 1000px;
+        
+        scrollbar-width: none;
+        
+    }
+    &__line {
+        width: auto;
+        height: 1px;
+        background-color: white;
+        opacity: 0.3;
+    }
+    &__flag {
+        width: 30px;
+
+    }
+    &__rate{
+        opacity: 0.7;
+    }
+}
+
+
+.scrollMenu__menu::-webkit-scrollbar {
+    display: none;
+}
+
+.scrollMenu__items {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    margin: 15px 15px 15px 0;
+    font-size: 14px;
+    gap: 10px;
+    font-family: $font-scrollMenu;
+    color: white;
+    
+    font-weight: 400;
+}
+
+.scrollMenu__change--up {
+    color: #24D8C1;
+}
+
+.scrollMenu__change--down {
+    color: #f3714d;
+}
+

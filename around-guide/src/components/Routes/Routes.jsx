@@ -1,19 +1,15 @@
 import { Children, useEffect, useRef, useState } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useTranslation } from "react-i18next";
-import "./Routes.scss";
-import CurrencySelect from "./CurrencySelect/CurrencySelect";
-import places from "../../data/places.json"
-import { getCurrencyRate } from "./API/currencyApi";
-import currenciesData from "../../data/currencies.json";
-
-import rate_line from "./rate/rate_line";
-
-//icons
 import USA from "../../assets/icons_flag/USA.png";
 import EUR from "../../assets/icons_flag/EUR.png";
 import IDR from "../../assets/icons_flag/IDR.png";
-import RUB from "../../assets/icons_flag/RU.png";
+import "./Routes.scss";
+import CurrencySelect from "./CurrencySelect/CurrencySelect";
+import places from "../../data/places.json"
+import Rate from "./Rate/Rate";
+import ScrollMenu from "./ScrollMenu/ScrollMenu";
+
 
 function Routes() {
     const {t, i18n } = useTranslation();
@@ -25,30 +21,17 @@ function Routes() {
  
 
     const [amount,setAmount] = useState("");
-    const [result, setResult] = useState("0");
+    const [result, setResult] = useState("");
     
-    const rate = {
-        USD_EUR : 0.86187,
-        EUR_USD : 1.16
-    };
+    // const rates = {
+    //     USD_EUR : 0.86,
+    //     EUR_USD : 1.16
+    // };
 
     
-    // const rate = 0.86187
+    const rate = 0.86187
     useEffect(() => {
-        
-        const converted = Number(amount) * rate.USD_EUR;
-        // для API
-        // const calculate = async () => {
-        //     const rate = await getCurrencyRate(
-        //         selectedCurrency,
-        //         toCurrency
-        //     );
-            
-        //     setResult(converted);
-        // };
-        // if (amount) {
-        //     calculate();
-        // }
+        const converted = Number(amount) * rate;
         setResult(converted);
     }, [amount]);
     
@@ -73,6 +56,8 @@ function Routes() {
             };
     }, []);
 
+    
+
     //результат конверта
     // const convert = () => {
 
@@ -93,23 +78,23 @@ function Routes() {
     //     setResult(Number(amount) * rate);
     // };
 
-    const icons = {
-        USA,
-        EUR,
-        IDR,
-        RUB
+    const currencies = {
+        USD : {
+            name: t("converter-card.USD"),
+            icon: USA,
+            sym: "$"
+        },
+        EUR : {
+            name: t("converter-card.EUR"),
+            icon: EUR,
+            sym: "€"
+        },
+        IDR : {
+            name: t("converter-card.IDR"),
+            icon: IDR,
+            sym: "Rp"
+        }
     };
-
-    const currencies = Object.fromEntries(
-        Object.entries(currenciesData).map(([code, currency]) =>[
-            code,
-            {
-                name: t(currency.translationKey),
-                icon: icons[currency.icon],
-                sym: currency.symbol
-            }
-        ])
-    );
 
     //reverse button
     // const SwappButton = ({onSwap}) => {
@@ -131,6 +116,61 @@ function Routes() {
         setAmount(String(Math.trunc(result)));
         
     };
+
+
+    const course_info = [
+
+        {
+            "id": 1,
+            "flag": USA,
+            "from": "USD",
+            "to": "EUR",
+            "rate": "0.860",
+            "change": "1.24"
+        },
+
+        {
+            "id": 2,
+            "flag": EUR,
+            "from": "EUR",
+            "to": "USD",
+            "rate": "1.14",
+            "change": "-1.97"
+        },
+        {
+            "id": 3,
+            "flag": IDR,
+            "from": "IDR",
+            "to": "USD",
+            "rate": "0.000056",
+            "change": "-0.91"
+        },
+        {
+            "id": 4,
+            "flag": USA,
+            "from": "USD",
+            "to": "EUR",
+            "rate": "0.860",
+            "change": "1.24"
+        },
+
+        {
+            "id": 5,
+            "flag": EUR,
+            "from": "EUR",
+            "to": "USD",
+            "rate": "1.14",
+            "change": "-1.97"
+        },
+        {
+            "id": 6,
+            "flag": IDR,
+            "from": "IDR",
+            "to": "USD",
+            "rate": "0.000056",
+            "change": "-0.91"
+        }
+    ]
     
 
     const transFormedText = amount.replace(/\B(?=(\d{3})+(?!\d))/g, ".");
@@ -270,7 +310,7 @@ function Routes() {
 
                         <div className="calc">
 
-
+                            <img className="calc__background-img" src="../../src/assets/convertor/convertor.png" alt=""></img>
                             <div className="calc__content">
                                 
                                 <div className="calc__swapp">
@@ -284,11 +324,7 @@ function Routes() {
                                 </div>
                                            
                                 <span className="calc__label">{t("converter.card_title-take")}</span>
-                                
-                                
-                                    
-                             
-                                    
+                                      
                                     <div className="calc__field">
 
                                             <CurrencySelect
@@ -317,11 +353,8 @@ function Routes() {
                                         </div> 
 
                                     </div>
-
-                            
                                 
                                     <span className="calc__label">{t("converter.card_title-receive")}</span>
-
 
                                     <div className="calc__field">
 
@@ -346,11 +379,33 @@ function Routes() {
 
                                         </div> 
                                     </div>
-                               
+                                
+                                <div className="rate_info">
 
+                                    <Rate
+                                        
+                                        fromCurrency= {selectedCurrency}
+                                        toCurrency = {toCurrency}
+                                        rate = {0.86}
+                                        change = {-1.24}
+                                    />
+                                        
+                                </div>
+             
                             </div>
+                                
 
                         </div>
+                    </div>
+
+                    
+                    <div style={{userSelect: 'none'}} className="course__info">
+
+                        <ScrollMenu
+                            items = {course_info}
+                            rate = {0.86}
+                            change = {-1.32}
+                        />
                     </div>
 
 

@@ -6,7 +6,7 @@ function Rate(){
     return(
         <div className="rate">
             <div className="rate__dot"></div>
-            <span className="rate__text">1 {fromCurrency} = {rate} {toCurrency}</span>
+            <span className="rate__text">{fromCurrency} = {rate} {toCurrency}</span>
             <span className="rate__trand"></span>
         </div>
     )}

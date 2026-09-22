@@ -61,10 +61,6 @@ function CurrencySelect({ currency, currencies, onChange, t }) {
                     <div onClick={() => handleChange("IDR")}>
                         {t("converter-card.IDR")}
                     </div>
-                    
-                    <div onClick={() => handleChange("RUB")}>
-                        {t("converter-card.RUB")}
-                    </div>
 
                 </div>
             )}

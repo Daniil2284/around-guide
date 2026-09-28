@@ -9,6 +9,7 @@ import CurrencySelect from "./CurrencySelect/CurrencySelect";
 import places from "../../data/places.json"
 import Rate from "./Rate/Rate";
 import ScrollMenu from "./ScrollMenu/ScrollMenu";
+import AutoConvert from "./AutoConvert/AutoConvert";
 
 
 function Routes() {
@@ -407,8 +408,14 @@ function Routes() {
                             change = {-1.32}
                         />
                     </div>
+                    
+                    <div className="autoConvert__info">
 
-
+                        <AutoConvert
+                        
+                        value={transFormedResult}
+                        />
+                    </div>
                     
                 </div>
             </section>

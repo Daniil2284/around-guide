@@ -1,9 +1,11 @@
+@use "../../Header/Header.scss";
+
 @font-face {
     font-family: "IBM Plex Mono";
     src: url("../../../assets/fonts/IBM-PLEX/IBMPlexMono-Medium.ttf");
     font-style: normal;
 }
-$font-scrollMenu: "IBM Plex Mono", sans-serif;
+$font-scrollMenu: "IBM Plex Mono", sans-serif !default;
 
 
 .scrollMenu {

@@ -46,5 +46,9 @@
         "VND": "VND — Vietnamese Dong",
         "IDR": "IDR — Indonesian Rupiah",
         "CNY": "CNY — Chinese Yuan"
+    },
+    "autoConvert":{
+        "headline": "WHERE ARE YOU GOING TO FLY",
+        "title-headline": "Auto currency converter — for other countries."
     }
 }

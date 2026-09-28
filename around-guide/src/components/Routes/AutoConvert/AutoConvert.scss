@@ -1,0 +1,82 @@
+@use "../../Header/Header.scss";
+$main-font-manrope: "Manrope", sans-serif !default;
+
+.autoConvert{
+    margin-top: 100px;
+
+
+    &__headline{
+        display: flex;
+        justify-content: start;
+        margin-bottom: 10px;
+        &-title {
+            font-family: $main-font-manrope;
+            color: white;
+        }
+    }
+
+    &__desc-text {
+        font-family: $main-font-manrope;
+        font-size: 16px;
+        color: white;
+        opacity: 0.6;
+        margin-bottom: 60px;
+    }
+    &__grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+    }
+    &__card {
+        border-radius: 20px;
+        border: 2px solid rgba($color: white, $alpha: .3);
+        
+        background-color: #105B52;
+        margin-bottom: 20px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        width: 270px;
+        height: 270px;
+        
+    }
+
+    &__card-main {
+        margin: 26px 26px;
+    }
+
+    &__card-city-price__input{
+        cursor: default;
+    }
+
+    &__img {
+        margin-bottom: 26px;
+        display: block;
+    }
+    &__card-city-title {
+        font-size: 20px;
+        color: white;
+        margin-bottom: 10px;
+
+    }
+    &__card-city-desc {
+        font-size: 14px;
+        color: white;
+        opacity: .5;
+        margin-bottom: 20px;
+    }
+    &__card-city-price {
+        align-items: center;
+        color: #3FFFD1;
+    }
+    &__card-city-price__input {
+        padding-left: 4px;
+        background: none;
+        border: none;
+        outline: none;
+        color: #3FFFD1;
+        margin-bottom: 20px;
+    }
+    &__desc-buy_text {
+        color: white;
+        opacity: .7;
+    }
+}

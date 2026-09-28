@@ -4,7 +4,6 @@ import "./ScrollMenu.scss";
 function ScrollMenu({items}){
     const menuRef = useRef(null);
 
-
     useEffect(() => {
         const menu = menuRef.current;
 
@@ -23,7 +22,7 @@ function ScrollMenu({items}){
             <div className="scrollMenu__main">
                 <div className="scrollMenu__line"></div>
 
-                <div className="scrollMenu__menu" ref={menuRef}>
+                <div  className="scrollMenu__menu" ref={menuRef}>
 
                     {items.map((item) => (
                         <div

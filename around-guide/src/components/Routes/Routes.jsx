@@ -10,6 +10,7 @@ import places from "../../data/places.json"
 import Rate from "./Rate/Rate";
 import ScrollMenu from "./ScrollMenu/ScrollMenu";
 import AutoConvert from "./AutoConvert/AutoConvert";
+import WeatherNow from "./WeatherNow/WeatherNow";
 
 
 function Routes() {
@@ -418,6 +419,10 @@ function Routes() {
                     </div>
                     
                 </div>
+            </section>
+
+            <section className="weather__info">
+                <WeatherNow/>
             </section>
         </div>
 

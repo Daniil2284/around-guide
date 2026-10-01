@@ -9,9 +9,10 @@ $main-font-manrope: "Manrope", sans-serif !default;
         display: flex;
         justify-content: start;
         margin-bottom: 10px;
-        &-title {
+        #autoConvert__headline-title{
             font-family: $main-font-manrope;
             color: white;
+            font-size: 36px;
         }
     }
 

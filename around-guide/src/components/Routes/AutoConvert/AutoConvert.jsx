@@ -8,7 +8,7 @@ function AutoConvert({value}){
     return (
         <div className="autoConvert">
             <div className="autoConvert__headline">
-                <h1 className="autoConvert__headline-title">{t("autoConvert.headline")}</h1>
+                <h1 id="autoConvert__headline-title">{t("autoConvert.headline")}</h1>
             </div>
 
             <div className="autoConvert__desc">
@@ -16,7 +16,7 @@ function AutoConvert({value}){
             </div>
 
             <article className="autoConvert__grid">
-                {/* bloc card */}
+                {/* block card */}
                 <div className="autoConvert__card">
                     <div className="autoConvert__card-main">
 

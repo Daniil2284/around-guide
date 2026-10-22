@@ -11,19 +11,32 @@ function WeatherNow() {
     const markerDot = [
 
         {
-            x: 400,
-            y:300,
+            x: 821,
+            y: 239,
             radius: 10,
             name: "Thailand"
 
         },
         {
-            x: 450,
-            y: 350,
+            x: 480,
+            y: 125,
             radius: 10,
             name: "Paris"
 
-        }
+        },
+        {
+            x: 888,
+            y: 324,
+            radius: 10,
+            name: "Bali"
+        },
+        {
+            x: 580,
+            y: 150,
+            radius: 10,
+            name: "Istanbul"
+
+        },
     ];
     
     const canvasRef = useRef(null)
@@ -35,8 +48,7 @@ function WeatherNow() {
         const ctx = canvas.getContext("2d");
 
         const image = new Image();
-        
-
+        // console.log("IMAGE CREATED");
         let pulse = 0;
 
         let x = 0;
@@ -98,7 +110,7 @@ function WeatherNow() {
         }
 
         function mouseDown(event) {
-            console.log("MOUSE DOWN");
+            // console.log("MOUSE DOWN");
             isDragging = true;
             hasMoved = false;
             startX = event.offsetX ;
@@ -106,7 +118,7 @@ function WeatherNow() {
         }
 
         function mouseMove(event) {
-            console.log("MOUSE MOVE");
+            // console.log("MOUSE MOVE");
             if (!isDragging) return;
 
             const dx = event.offsetX - startX;
@@ -125,7 +137,7 @@ function WeatherNow() {
         }
 
         function handleClick(event){
-            console.log("CLICK");
+            // console.log("CLICK");
             if (hasMoved) return;
             const mouseX = (event.offsetX - x) / scale;
             const mouseY = (event.offsetY - y) / scale;
@@ -137,8 +149,8 @@ function WeatherNow() {
     
                 if(distance <= marker.radius){
                     // tested
-                    console.log("clicked")
-                    alert(marker.name);
+                    // console.log("clicked")
+                    // alert(marker.name);
                     setSelectedCity(marker.name);
                     break;
                 }   
@@ -151,8 +163,9 @@ function WeatherNow() {
         }
         
         image.onload = () => {
-            console.log("IMAGE LOADED");
+            // console.log("IMAGE LOADED");
             map();
+           
         };
         image.onerror = () => {
             console.log("Ошибка загрузки картинки");
@@ -167,6 +180,8 @@ function WeatherNow() {
         canvas.addEventListener("mouseleave", mouseUp);
 
         return () => {
+            image.onload = null;
+            image.onerror = null;
             cancelAnimationFrame(animationId);
             canvas.removeEventListener("mousedown", mouseDown);
             canvas.removeEventListener("mousemove", mouseMove);
@@ -194,7 +209,12 @@ function WeatherNow() {
                         <li><button className={`weather__country-nav_select-text ${
                         selectedCity === "Thailand" ? "weather__country-nav_select-text--active" : ""
                         }`} onClick={() => setSelectedCity("Thailand")} type="button">{t("weather.country-name.1")}</button></li>
-                        
+                        <li><button className={`weather__country-nav_select-text ${
+                        selectedCity === "Istanbul" ? "weather__country-nav_select-text--active" : ""
+                        }`} onClick={() => setSelectedCity("Istanbul")} type="button">{t("weather.country-name.2")}</button></li>
+                        <li><button className={`weather__country-nav_select-text ${
+                        selectedCity === "Bali" ? "weather__country-nav_select-text--active" : ""
+                        }`} onClick={() => setSelectedCity("Bali")} type="button">{t("weather.country-name.3")}</button></li>
                     </ul>
                 </nav>
 
@@ -212,7 +232,7 @@ function WeatherNow() {
             <dl className="weather__stats">
                 <div>
                     
-                    <dt>{t("weather.city-name.0")}</dt>
+                    <dt>{selectedCity}</dt>
                     <dd>{t("weather.city")}</dd>
                 </div>
                 <div className="line"></div>

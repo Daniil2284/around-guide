@@ -12,21 +12,21 @@ $main-font-manrope: "Manrope", sans-serif !default;
         #autoConvert__headline-title{
             font-family: $main-font-manrope;
             color: white;
-            font-size: 36px;
+            font-size: clamp(1rem, 0.5rem + 2.5vw,2.5rem) ;
         }
     }
 
     &__desc-text {
         font-family: $main-font-manrope;
-        font-size: 16px;
+        font-size: clamp(0.3rem, 0.1rem + 2.5vw, 1rem);
         color: white;
         opacity: 0.6;
         margin-bottom: 60px;
     }
     &__grid {
         display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        gap: 20px;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: clamp(1rem, 2vw, 24px);
     }
     &__card {
         border-radius: 20px;
@@ -35,8 +35,8 @@ $main-font-manrope: "Manrope", sans-serif !default;
         background-color: #105B52;
         margin-bottom: 20px;
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-        width: 270px;
-        height: 270px;
+        // width: 270px;
+        // height: 270px;
         
     }
 
@@ -45,6 +45,7 @@ $main-font-manrope: "Manrope", sans-serif !default;
     }
 
     &__card-city-price__input{
+        width: 100px;
         cursor: default;
     }
 
@@ -53,7 +54,7 @@ $main-font-manrope: "Manrope", sans-serif !default;
         display: block;
     }
     &__card-city-title {
-        font-size: 20px;
+        font-size: clamp(0.5rem, 0.3rem + 2.5vw,1.3rem);
         color: white;
         margin-bottom: 10px;
 

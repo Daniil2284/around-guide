@@ -177,6 +177,8 @@ function Routes() {
 
     const transFormedText = amount.replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
+    const [showAll, setShowAll] = useState(false);
+
     return (
         <div className="page">
             <section className="section routes">

@@ -18,11 +18,19 @@ $color-sym: #A0CCC7;
 $font-converter-currency: "IBM Plex Mono", sans-serif;
 $font-route-name: "Special Elite", sans-serif;
 
+$green-dark: #134B44;
+$green-light: #1b6d61;
+$test :linear-gradient(
+    135deg,
+    $green-light 0%,
+    $green-dark 100%,
+);
+
 .page {
-    background-image: url("../../assets/for_background.svg");
+    background-image: url("../../assets/for_background.svg"),$test;
     background-position: center 0%;
     background-size: cover;
-    background-color: $background-color;
+    
     background-repeat: repeat;
 }
 .routes {
@@ -40,7 +48,7 @@ $font-route-name: "Special Elite", sans-serif;
         align-items: center;
         font-family: $main-font;
         color: $body-color;
-        font-size: 44px;
+        font-size: clamp(1.5rem,4vh,3rem);
     }
 
     &__desc {
@@ -49,7 +57,7 @@ $font-route-name: "Special Elite", sans-serif;
         align-items: center;
         font-family: $font-headline-desc;
         color: white;
-        font-size: 20px;
+        font-size: clamp(0.5rem,4vh,1.5rem);
         opacity: .7;
         margin-top: 20px;
     }
@@ -175,6 +183,9 @@ $font-route-name: "Special Elite", sans-serif;
         width: 10px;
         margin-left: 10px;
     }
+    &__more {
+        display: none;
+    }
 }
 
 
@@ -185,6 +196,39 @@ $font-route-name: "Special Elite", sans-serif;
     flex-direction: row-reverse;
 }
 
+@media (max-width: 768px) {
+    .route {
+        display: flex;
+        justify-content: center;
+        // &__name{
+        //     width: clamp(100px, 5vh, 200px);
+        // }
+    }
+    .route__image {
+        display: none;
+    }
+}
+
+@media (max-width: 420px) {
+    
+    .routes__board {
+        display: block;
+        flex-direction: column;
+        align-items: center;
+        gap: 24px;
+        width: 100%;
+    }
+
+    .route {
+        display: flex;
+        
+        justify-content: center;
+        width: calc(100% - 32px);
+        max-width: 320px;
+        box-sizing: border-box;
+    }
+}
+
 
 .aboutUs {
     padding-bottom: 400px;
@@ -192,7 +236,7 @@ $font-route-name: "Special Elite", sans-serif;
         display: flex;
         justify-content: center;
         align-items: center;
-        font-size: 44px;
+        font-size: clamp(1.5rem, 4vh, 3rem);
         font-family: $main-font;
         color:$body-color ;
     }
@@ -265,7 +309,7 @@ $font-route-name: "Special Elite", sans-serif;
         width: auto;
         font-family: $main-font;
         color:$body-color ;
-        font-size: 24px;
+        font-size: clamp(12px, 7vw, 24px);
     }
     &__desc {
         text-align: center;
@@ -289,6 +333,61 @@ $font-route-name: "Special Elite", sans-serif;
 
 }
 
+@media(max-width: 1300px){
+    .aboutUs{
+        &__big-card{
+            margin: 0 40px;
+        }
+        &__img_1,
+        &__img_2,
+        &__img_3{
+            width: clamp(250px,6vh,300px);
+        }
+        &__main{
+            margin-top: 50px;
+        }
+        &__img_1{
+            right: 20%;
+        }
+        &__img_2{
+            left: 0;
+        }
+        // &__line {
+        //     position: relative;
+        //     top: -70px;
+        // }
+    }
+}
+
+@media (max-width: 768px) {
+    .aboutUs {
+        padding-bottom: 100px;
+        &__img_1 {
+            display: none;
+        }
+        &__img_2 {
+            width: 200px;
+        }
+        &__img_3 {
+            width: 200px;
+        }
+        &__test {
+            display: none;
+        }
+
+        &__big-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+
+            width: calc(100% - 32px);
+            max-width: 300px;
+            margin: 0 auto;
+            box-sizing: border-box;
+        }
+    }
+}
 .convertor {
     
     &__info {
@@ -302,7 +401,7 @@ $font-route-name: "Special Elite", sans-serif;
         display: flex;
         justify-content: center;   
         font-family: $main-font;
-        font-size: 48px;
+        font-size: clamp(1.5rem, 4vh, 3rem);
         color: $body-color;
         margin-bottom: 20px;
     }
@@ -312,7 +411,7 @@ $font-route-name: "Special Elite", sans-serif;
         color: white;
         opacity: 0.7;
         margin-bottom: 100px;
-        font-size: 18px;
+        font-size: clamp(0.8rem, 2vh, 1rem);
         width: 700px;
         align-self: center;
         text-align: center;
@@ -343,7 +442,7 @@ $font-route-name: "Special Elite", sans-serif;
     }
 
     &__label {
-        font-size: 18px;
+        font-size: clamp(0.8rem, 2vh, 1rem);
         letter-spacing: 3px;
         color: white;
         opacity: .7;
@@ -420,7 +519,7 @@ $font-route-name: "Special Elite", sans-serif;
         border: none;
         color: white;
         font-family: $font-converter-currency;
-        font-size: 22px;
+        font-size: clamp(1rem, 2vh, 2rem);
         font-weight: 800;
         
         cursor: pointer;
@@ -428,13 +527,13 @@ $font-route-name: "Special Elite", sans-serif;
 
     &__sym {
         font-family: $font-converter-currency;
-        font-size: 20px;
+        font-size: clamp(1rem, 2vh, 2rem);
         color: $color-sym ;
     }
 
     &__input {
         font-family: $font-converter-currency;
-        font-size: 22px;
+        font-size: clamp(1rem, 2.5vh, 2rem);
         color: white;
         &::placeholder {
             color: white;
@@ -520,3 +619,163 @@ $font-route-name: "Special Elite", sans-serif;
     display: flex;
     justify-content: center;
 }
+
+
+
+/* Небольшие ноутбуки и планшеты в горизонтальном положении */
+@media (max-width: 1150px) {
+    .calc {
+        &__content {
+            width: calc(100% - 48px);
+            max-width: 600px;
+            left: 50%;
+            box-sizing: border-box;
+        }
+
+        &__background-img {
+            width: 90%;
+            max-width: 900px;
+            height: auto;
+        }
+
+        &__field {
+            width: 100%;
+            max-width: 100%;
+            margin-bottom: 0;
+            gap: 16px;
+            box-sizing: border-box;
+        }
+
+        &__swapp {
+            display: none;
+        }
+
+        &__label {
+            letter-spacing: 0;
+            padding-top: 20px;
+        }
+    }
+
+    .tested {
+        max-width: 20px;
+        max-height: 20px;
+    }
+
+    .currency__flag {
+        width: 20px;
+        height: 20px;
+        max-width: 20px;
+        max-height: 20px;
+        padding: 0;
+        object-fit: contain;
+        box-sizing: border-box;
+    }
+
+    .currency__selected {
+        gap: 6px;
+        padding: 8px;
+        font-size: 18px;
+    }
+
+    .currency__input {
+        min-width: 0;
+        max-width: 100%;
+        font-size: 18px;
+        box-sizing: border-box;
+    }
+}
+
+
+@media (max-width: 768px) {
+    .calc {
+        &__background-img {
+            width: 100%;
+            max-width: 100%;
+            height: auto;
+        }
+
+        &__content {
+            width: calc(100% - 32px);
+            max-width: 600px;
+            
+        }
+
+        &__field {
+            gap: 12px;
+        }
+
+        &__label {
+            padding-top: 12px;
+            font-size: 14px;
+        }
+    }
+
+    .currency__selected {
+        font-size: 16px;
+        padding: 6px;
+    }
+
+    .currency__input {
+        font-size: 16px;
+    }
+    .rate {
+        &__value{
+            font-size: 12px;
+        }
+    }
+}
+
+
+/* Маленькие телефоны */
+@media (max-width: 700px) {
+
+    .calc {
+        &__background-img {
+            display: none;
+        }
+
+        &__content {
+            position: relative;
+            top: auto;
+            left: auto;
+            transform: none;
+
+            width: calc(100% - 24px);
+            max-width: 360px;
+            margin: 0 auto;
+            padding: 16px 12px;
+        }
+
+        &__field {
+            flex-direction: column;
+            align-items: stretch;
+            gap: 16px;
+        }
+
+        &__label {
+            padding-top: 8px;
+            font-size: 12px;
+        }
+    }
+
+    .currency {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .currency__selected {
+        font-size: 15px;
+    }
+
+    .currency__input {
+        width: 100%;
+        font-size: 15px;
+    }
+
+    .currency__flag {
+        width: 18px;
+        height: 18px;
+    }
+}
+
+

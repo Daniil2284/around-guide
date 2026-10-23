@@ -24,6 +24,8 @@
     font-style: normal;
 }
 
+
+
 $Montserrat-font: "Montserrat", sans-serif !default;
 $main-font: "Manrope", sans-serif !default;
 $body-color: #E17754;
@@ -333,10 +335,10 @@ $font-headline-desc: "Forum", sans-serif !default;
         position: absolute;
         z-index: 1000;
         
-        &__logotype {
-            // padding-right: clamp();
-        }
-        &__burger {
+        // &__logotype {
+        //     // padding-right: clamp();
+        // }
+        &__burger { 
             display: flex;
             align-items: center;
             justify-content: center;

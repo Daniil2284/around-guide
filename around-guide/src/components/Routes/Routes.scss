@@ -625,9 +625,12 @@ $test :linear-gradient(
 /* Небольшие ноутбуки и планшеты в горизонтальном положении */
 @media (max-width: 1150px) {
     .calc {
+        &__label {
+            font-size: clamp(12px, 1.2vw, 24px);
+        }
         &__content {
             width: calc(100% - 48px);
-            max-width: 600px;
+            max-width: 700px;
             left: 50%;
             box-sizing: border-box;
         }
@@ -657,24 +660,21 @@ $test :linear-gradient(
     }
 
     .tested {
-        max-width: 20px;
-        max-height: 20px;
+        width: 20px;
+        height: 20px;
     }
 
     .currency__flag {
-        width: 20px;
-        height: 20px;
-        max-width: 20px;
-        max-height: 20px;
-        padding: 0;
-        object-fit: contain;
-        box-sizing: border-box;
+        width: 40px;
+        
+        padding: 10px;
+   
     }
 
     .currency__selected {
         gap: 6px;
         padding: 8px;
-        font-size: 18px;
+        font-size: 14px;
     }
 
     .currency__input {
@@ -685,9 +685,29 @@ $test :linear-gradient(
     }
 }
 
+@media (max-width: 920px) {
+
+    .calc{
+        &__label {
+            font-size: clamp(12px, 1.2vw, 24px);
+        }
+        &__content{
+            max-width: 600px;
+        }
+    }
+}
+
 
 @media (max-width: 768px) {
+    .autoConvert__info{
+    
+        margin: 0 80px 0 80px;
+    }
     .calc {
+        &__label {
+            font-size: clamp(10px, 1.2vw, 24px);
+            padding-top: 12px;
+        }
         &__background-img {
             width: 100%;
             max-width: 100%;
@@ -704,19 +724,17 @@ $test :linear-gradient(
             gap: 12px;
         }
 
-        &__label {
-            padding-top: 12px;
-            font-size: 14px;
-        }
+
     }
 
     .currency__selected {
-        font-size: 16px;
+        font-size: 12px;
         padding: 6px;
     }
+    
 
     .currency__input {
-        font-size: 16px;
+        font-size: 14px;
     }
     .rate {
         &__value{
@@ -728,7 +746,11 @@ $test :linear-gradient(
 
 /* Маленькие телефоны */
 @media (max-width: 700px) {
-
+    .convertor{
+        &__title {
+            max-width: 500px;
+        }
+    }
     .calc {
         &__background-img {
             display: none;
@@ -761,21 +783,33 @@ $test :linear-gradient(
     .currency {
         width: 100%;
         min-width: 0;
-    }
-
-    .currency__selected {
-        font-size: 15px;
-    }
-
-    .currency__input {
-        width: 100%;
-        font-size: 15px;
-    }
-
-    .currency__flag {
-        width: 18px;
-        height: 18px;
+        &__selected {
+            font-size: 15px;
+        }
+        &__input {
+            width: 100%;
+            font-size: 15px;
+        }
+        &__flag {
+            width: 20px;
+            height: 20px;
+        }
+        &__amout-side{
+            display: flex;
+        }
+        &__flag{
+            width: 40px;
+            height: 40px;
+        }
     }
 }
+
+@media(max-width:500px){
+    .convertor{
+        &__title {
+            max-width: 300px;
+        }
+    }
+}   
 
 

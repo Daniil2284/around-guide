@@ -58,8 +58,21 @@ $font-converter-currency: "IBM Plex Mono", sans-serif;
     color: #f3714d;
 }
 
+@media(max-width:1150px){
+    .rate {
+
+        &__value,
+        &__change,
+        &__arrow,
+        &__precent {
+            font-size: 14px;
+        }
+    }
+}
+
 @media (max-width: 768px) {
     .rate {
+        top: 80%;
         &__main {
             gap: 6px;
         }
@@ -85,11 +98,17 @@ $font-converter-currency: "IBM Plex Mono", sans-serif;
  
 }
 
+@media(max-width:700px){
+    .rate{
+        top: 0%;
+    }
+}
+
 
 /* Телефоны */
 @media (max-width: 480px) {
     .rate {
-        top: 80%;
+        top: 0%;
         width: 100%;
         padding: 0 8px;
 

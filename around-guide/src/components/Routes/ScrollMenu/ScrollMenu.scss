@@ -17,7 +17,7 @@ $font-scrollMenu: "IBM Plex Mono", sans-serif !default;
     &__menu {
         display: flex;
         overflow-x: auto;
-        width: 1000px;
+        width: 100vh;
         
         scrollbar-width: none;
         
@@ -63,3 +63,39 @@ $font-scrollMenu: "IBM Plex Mono", sans-serif !default;
     color: #f3714d;
 }
 
+
+@media(max-width:900px){
+    .scrollMenu{
+        &__menu{
+            max-width: 900px;
+            width: 90vh;
+        }
+    }
+}
+
+@media(max-width:768px){
+    .scrollMenu{
+        &__menu{
+            
+            width: 80vh;
+        }
+    }
+}
+@media(max-width:700px){
+    .scrollMenu{
+        margin-top: 50px;
+        &__menu{
+            width: 50vh;
+        }
+    }
+}
+
+@media(max-width:430px){
+    .scrollMenu{
+        
+        margin-top: 50px;
+        &__menu{
+            width: 30vh;
+        }
+    }
+}

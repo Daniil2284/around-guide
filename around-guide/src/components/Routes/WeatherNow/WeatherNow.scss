@@ -5,18 +5,22 @@ $color-orange: #E17754;
     margin-top: 100px;
     &__headline{
         display: flex;
-        justify-content: start;
+        justify-content: center;
+        width: 100%;
     }
     #weather__headline-text{
         color: white;
         font-family: $main-font-manrope;
         font-size: 36px;
     }
-
+    &__country-nav{
+        margin: 0 100px;
+    }
     &__country-nav_select {
         
         ul{
             display: grid;
+            gap: 20px;
             grid-template-columns: repeat(8, 1fr);
             
             li{
@@ -48,6 +52,7 @@ $color-orange: #E17754;
 
 
     &__current-weather{
+        margin: 0 100px;
         margin-top: 60px;
         gap: 10px;
         display: flex;
@@ -139,4 +144,21 @@ canvas {
 
 canvas:active {
     cursor: grabbing;
+}
+
+.interactiveMap {
+    width: 100%;
+    min-width: 0;
+}
+
+.interactiveMap__worldmap {
+    width: 100%;
+    max-width: 1068px;
+    margin: 0 auto;
+}
+
+.interactiveMap__worldmap canvas {
+    display: block;
+    width: 100%;
+    height: auto;
 }

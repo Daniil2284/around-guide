@@ -12,7 +12,7 @@ $main-font-manrope: "Manrope", sans-serif !default;
         #autoConvert__headline-title{
             font-family: $main-font-manrope;
             color: white;
-            font-size: clamp(1rem, 0.5rem + 2.5vw,2.5rem) ;
+            font-size: clamp(1.5rem, 3.2vh, 3rem);
         }
     }
 
@@ -27,6 +27,31 @@ $main-font-manrope: "Manrope", sans-serif !default;
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
         gap: clamp(1rem, 2vw, 24px);
+        &:not(.show-all) {
+        .autoConvert__card:nth-child(n + 5) {
+            display: none;
+            }
+        }
+    }
+    &__show-more {
+        display: block;
+        margin: 30px auto;
+        padding: 12px 28px;
+
+        background: transparent;
+        border: 1px solid #24D8C1;
+        border-radius: 8px;
+
+        color: #24D8C1;
+        font-size: 16px;
+        cursor: pointer;
+
+        transition: background 0.3s ease, color 0.3s ease;
+
+        &:hover {
+            background: #24D8C1;
+            color: #101010;
+        }
     }
     &__card {
         border-radius: 20px;
@@ -80,5 +105,13 @@ $main-font-manrope: "Manrope", sans-serif !default;
     &__desc-buy_text {
         color: white;
         opacity: .7;
+    }
+}
+
+@media(max-width:400px){
+    .autoConvert{
+        &__desc-buy_text {
+            font-size: 12px;
+        }
     }
 }

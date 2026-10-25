@@ -106,9 +106,23 @@ function Routes() {
     //         onSwap();
     //     };
     // }
-    const [selectedCurrency, setSelectedCurrency] = useState("USD");
-    const [toCurrency, setToCurrency] = useState("EUR");
+
+    // Конвертация и куки для конвертора
+    const [selectedCurrency, setSelectedCurrency] = useState(
+    () => localStorage.getItem("selectedCurrency") || "USD"
+    );
+        const [toCurrency, setToCurrency] = useState(
+        () => localStorage.getItem("toCurrency") || "EUR"
+    );
+    useEffect(() => {
+        localStorage.setItem("selectedCurrency", selectedCurrency);
+    }, [selectedCurrency]);
+
+    useEffect(() => {
+        localStorage.setItem("toCurrency", toCurrency);
+    }, [toCurrency]);
     
+    // переворот для конвертора
     const [isRotate, setIsRotate] = useState(false);
 
     const swap = () => {
@@ -177,7 +191,7 @@ function Routes() {
 
     const transFormedText = amount.replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
-    const [showAll, setShowAll] = useState(false);
+    const [showAll, setShowAll] = useState(false)
 
     return (
         <div className="page">
@@ -213,12 +227,13 @@ function Routes() {
             </section>
 
             <section className="section about">
+
                 <div className="aboutUs">
                     <h1 className="aboutUs__headline">{t("about.headline")}</h1>
                     
                     <div className="aboutUs__main">
                         
-                        <div className="aboutUs__big-card">
+                        <div className={`aboutUs__big-card ${showAll ? "show-all" : ""}`}>
                             <div className="aboutUs__card">
                                 <h3 className="aboutUs__title">{t("about.title_1")}</h3>
                                 <p className="aboutUs__desc">{t("about.desc_1")}</p>
@@ -298,7 +313,24 @@ function Routes() {
                                     </div>
                                 </div>
                         </div>
+
                     </div>
+                        
+                        {!showAll ? (
+                            <button
+                                className="aboutUs__card-more"
+                                onClick={() => setShowAll(true)}
+                            >
+                                {t("moreButton.see")}
+                            </button>
+                        ) : (
+                            <button
+                                className="aboutUs__card-more"
+                                onClick={() => setShowAll(false)}
+                            >
+                               {t("moreButton.hidden")}
+                            </button>
+                        )}      
 
 
                 </div>

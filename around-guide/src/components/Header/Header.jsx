@@ -39,10 +39,37 @@ function Header() {
         setIsOpen(false);
     };
 
+    // Прокрутка вниз вверх
+    const [showHeader, setShowHeader] = useState(true);
 
+    useEffect(() => {
+        let lastScrollY = window.scrollY;
+
+        function handleScroll() {
+            const currentScrollY = window.scrollY;
+
+            if (currentScrollY < 50) {
+                setShowHeader(true);
+            } else if (currentScrollY > lastScrollY) {
+                
+                setShowHeader(false);
+            } else if (currentScrollY < lastScrollY) {
+                
+                setShowHeader(true);
+            }
+
+            lastScrollY = currentScrollY;
+        }
+
+        window.addEventListener("scroll", handleScroll);
+
+        return () => {
+            window.removeEventListener("scroll", handleScroll);
+        };
+    }, []);
     
     return (
-        <header className="header">
+        <header className={`header ${showHeader ? "header--visible" : "header--hidden"}`}>
             <div className="header__logotype">
                 Around Guide
             </div>

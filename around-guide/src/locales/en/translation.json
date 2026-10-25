@@ -1,4 +1,8 @@
 {
+    "moreButton":{
+        "see": "Show all",
+        "hidden": "Hidden"
+    },
     "header": 
     {
         "main" : "MAIN",
@@ -49,6 +53,22 @@
     },
     "autoConvert":{
         "headline": "WHERE ARE YOU GOING TO FLY",
-        "title-headline": "Auto currency converter — for other countries."
-    }
+        "title-headline": "Auto currency converter — for other countries.",
+        "city-name": ["France","Thailand","Türkiye", "UAE"],
+        "country-name": ["Paris ● EUR", "Bangkok ● THB", "Istanbul ● TRY", "Dubai ● AED"],
+        "sym": ["€", ""],
+        "buy": ["coffee on the terrace 3.5"]
+        
+    },
+    "weather" : {
+        "headline": "WEATHER IN DIFFERENT COUNTRIES",
+        "country-name": ["France", "Thailand", "Türkiye", "UAE"],
+        "city-name" : ["Paris","Bangkok","Istanbul", "Dubai"],
+        "city" : "City",
+        "wind" : "Wind",
+        "feeling": "feels",
+        "current-weather" : "Current weather",
+        "conditions" : "Conditions",
+        "precipitation" : "Light rain"
+    } 
 }

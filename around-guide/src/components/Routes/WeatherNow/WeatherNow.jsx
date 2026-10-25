@@ -110,55 +110,68 @@ function WeatherNow() {
         }
 
         function mouseDown(event) {
-            // console.log("MOUSE DOWN");
+            event.preventDefault();
+
             isDragging = true;
             hasMoved = false;
-            startX = event.offsetX ;
-            startY = event.offsetY ;
+
+            const rect = canvas.getBoundingClientRect();
+
+            startX = (event.clientX - rect.left) * (canvas.width / rect.width);
+            startY = (event.clientY - rect.top) * (canvas.height / rect.height);
+
+            canvas.setPointerCapture(event.pointerId);
         }
 
         function mouseMove(event) {
-            // console.log("MOUSE MOVE");
             if (!isDragging) return;
 
-            const dx = event.offsetX - startX;
-            const dy = event.offsetY - startY;
+            const rect = canvas.getBoundingClientRect();
 
-            
+            const currentX = (event.clientX - rect.left) * (canvas.width / rect.width);
+            const currentY = (event.clientY - rect.top) * (canvas.height / rect.height);
+
+            const dx = currentX - startX;
+            const dy = currentY - startY;
+
             if (Math.abs(dx) > 2 || Math.abs(dy) > 2) {
                 hasMoved = true;
             }
-            
+
             x += dx;
             y += dy;
 
-            startX = event.offsetX;
-            startY = event.offsetY;
+            startX = currentX;
+            startY = currentY;
         }
 
-        function handleClick(event){
-            // console.log("CLICK");
+        function handleClick(event) {
             if (hasMoved) return;
-            const mouseX = (event.offsetX - x) / scale;
-            const mouseY = (event.offsetY - y) / scale;
 
-            for (let i = 0; i < markerDot.length; i++){
+            const rect = canvas.getBoundingClientRect();
 
+            const pointX = (event.clientX - rect.left) * (canvas.width / rect.width);
+            const pointY = (event.clientY - rect.top) * (canvas.height / rect.height);
+
+            const mouseX = (pointX - x) / scale;
+            const mouseY = (pointY - y) / scale;
+
+            for (let i = 0; i < markerDot.length; i++) {
                 const marker = markerDot[i];
-                const distance = Math.sqrt((mouseX - marker.x) ** 2 + (mouseY - marker.y)** 2) ;
-    
-                if(distance <= marker.radius){
-                    // tested
-                    // console.log("clicked")
-                    // alert(marker.name);
+
+                const distance = Math.sqrt(
+                    (mouseX - marker.x) ** 2 +
+                    (mouseY - marker.y) ** 2
+                );
+
+                if (distance <= marker.radius + 5) {
                     setSelectedCity(marker.name);
                     break;
-                }   
+                }
             }
         }
 
-        
-        function mouseUp(){
+        function mouseUp() {
             isDragging = false;
         }
         

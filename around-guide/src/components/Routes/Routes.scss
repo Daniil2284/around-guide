@@ -20,14 +20,14 @@ $font-route-name: "Special Elite", sans-serif;
 
 $green-dark: #134B44;
 $green-light: #1b6d61;
-$test :linear-gradient(
+$background-color :linear-gradient(
     135deg,
     $green-light 0%,
     $green-dark 100%,
 );
 
 .page {
-    background-image: url("../../assets/for_background.svg"),$test;
+    background-image: url("../../assets/for_background.svg"),$background-color;
     background-position: center 0%;
     background-size: cover;
     
@@ -60,6 +60,7 @@ $test :linear-gradient(
         font-size: clamp(0.5rem,4vh,1.5rem);
         opacity: .7;
         margin-top: 20px;
+        
     }
     &__board {
         margin-top: 100px;
@@ -1139,3 +1140,4 @@ $test :linear-gradient(
         }
     }
 }   
+

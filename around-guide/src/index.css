@@ -30,3 +30,7 @@ img {
     max-width: 100%;
     display: block;
 }
+::selection {
+    background: #24D8C1;
+    color: #101010;
+}

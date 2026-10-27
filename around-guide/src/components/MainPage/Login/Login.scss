@@ -1,0 +1,67 @@
+@font-face {
+    font-family: "Ubuntu" ;
+    src: url("../../../assets/fonts/Ubuntu/Ubuntu-Medium.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+}
+$login-font: "Ubuntu", sans-serif !default;
+
+$green-dark: #134B44;
+$green-light: #1b6d61;
+$background-color :linear-gradient(
+    180deg,
+    $green-light 0%,
+    $green-dark 100%,
+);
+
+.login {
+    display: flex;
+    flex-direction: row;
+    background-image: url("../../../assets/for_background.svg"),$background-color;
+    background-position: center 0%;
+    background-size: cover;
+    min-height: 100vh;
+    width: 100%;
+    
+    background-repeat: no-repeat;
+
+    &__image{
+        margin: clamp(20px, 5vh,60px);
+    }
+
+    &__headline{
+        width: 100%;
+
+        display: flex;
+        justify-content: center;
+        align-items: center; 
+        margin: 220px 90px 0 0;
+    }
+    &__back{
+        margin-right: 120px;
+        button{
+            color: none;
+        }
+    }
+    &__text{
+        display: flex;
+        justify-content: center;
+
+        font-size: 32px;
+        font-family: $login-font;
+        color: white;
+        font-weight: 800;
+    }
+
+}
+
+
+
+
+// @media(max-width:500px){
+//     .login{
+//         &__image{
+//             margin: ;
+//         }
+//     }
+// }

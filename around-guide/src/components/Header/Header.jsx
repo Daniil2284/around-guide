@@ -3,12 +3,13 @@ import { useTranslation } from "react-i18next";
 import "./Header.scss";
 import searchIcon from "..//..//assets/icons/search.svg";
 import BurgerIcon from "./BurgerIcon";
-
+import Login from "../MainPage/Login/Login";
+import { useNavigate } from "react-router-dom";
 
 function Header() {
     const { t, i18n } = useTranslation();
     const [isOpen, setIsOpen] = useState(false);
-
+    const navigate = useNavigate();
     const languageRef = useRef(null);
 
     
@@ -98,7 +99,7 @@ function Header() {
             
             
             <div className="header__log">
-                <button className="header__log_in">{t("header.log_in")}</button>
+                <button className="header__log_in" onClick={() => navigate("/login")}>{t("header.log_in")}</button>
             </div>
 
             {/* Переводчик с выпадающим окном */}

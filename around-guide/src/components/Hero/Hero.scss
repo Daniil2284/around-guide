@@ -58,12 +58,12 @@ $font-radius-color: #FFD773;
         
         font-family: $font-radius;
         color: $font-radius-color;
-        font-size: clamp(0.5rem, 6vw,1.5rem);
+        font-size: clamp(0.5rem, 3vw,1.5rem);
 
     }
     &__travel_desc{
         width: 950px;
-        max-width: 100%;
+        max-width: 80%;
         box-sizing: border-box;
         font-family: $font-family-Gil;
         letter-spacing: 5%;
@@ -99,7 +99,7 @@ $font-radius-color: #FFD773;
         }
 
         &__travel_desc {
-            font-size: clamp(24px, 7vw, 50px);
+            font-size: clamp(32px, 9vw, 44px);
             max-width: 100%;
         }
         &__line1{

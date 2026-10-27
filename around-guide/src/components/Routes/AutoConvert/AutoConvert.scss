@@ -46,7 +46,7 @@ $main-font-manrope: "Manrope", sans-serif !default;
     &__grid {
         width: 1000px;
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(clamp(200px,30vh,300px), 1fr));
         gap: clamp(1rem, 2vw, 24px);
         &:not(.show-all) {
         .autoConvert__card:nth-child(n + 5) {
@@ -87,7 +87,7 @@ $main-font-manrope: "Manrope", sans-serif !default;
     }
 
     &__card-main {
-        margin: 26px 26px;
+        margin: clamp(10px,5vw,26px);
     }
 
     &__card-city-price__input{
@@ -96,7 +96,8 @@ $main-font-manrope: "Manrope", sans-serif !default;
     }
 
     &__img {
-        margin-bottom: 26px;
+        max-width: clamp(30px,10vw,52px);
+        margin-bottom: clamp(10px,5vw,26px);
         display: block;
     }
     &__card-city-title {
@@ -131,6 +132,9 @@ $main-font-manrope: "Manrope", sans-serif !default;
 
 @media(max-width:1000px){
     .autoConvert{
+        &__info{
+            margin: 0 20px;
+        }
         &__desc-text{
             margin-left: 0px;
         }
@@ -140,13 +144,24 @@ $main-font-manrope: "Manrope", sans-serif !default;
     }
 }
 
-@media(max-width:840px){
-    .autoConvert{
-        &__info{
-            margin: 0 120px;
-        }
-    }
-}
+// @media(max-width:840px){
+//     .autoConvert{
+//         // &__info{
+//         //     margin: 0 120px;
+//         // }
+//         &__grid {
+//             width: 1000px;
+//             display: grid;
+//             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+//             gap: clamp(1rem, 2vw, 24px);
+//             &:not(.show-all) {
+//             .autoConvert__card:nth-child(n + 5) {
+//                 display: none;
+//                 }
+//             }
+//         }
+//     }
+// }
 
 @media(max-width:700px){
     .autoConvert{

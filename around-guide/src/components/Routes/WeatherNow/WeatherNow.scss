@@ -18,7 +18,8 @@ $color-orange: #E17754;
     }
 
     #weather__headline-text {
-        color: white;
+        color: #E17754;
+        padding-bottom: 100px;
         font-family: $main-font-manrope;
         font-size: clamp(1.5rem, 3vw, 3rem);
         text-align: center;

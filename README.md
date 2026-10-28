@@ -9,6 +9,8 @@
     if no (i18next) npm install i18next
     and npm install framer-motion
     npm install i18next-browser-languagedetector
+    npm install react-router-dom
+    npm install react-phone-number-input
 3. ```how clone repo```
     use command: git clone 
 4. ```started server for frontend react```

@@ -1,13 +1,8 @@
-@font-face {
-    font-family: "Ubuntu" ;
-    src: url("../../../assets/fonts/Ubuntu/Ubuntu-Medium.ttf") format("truetype");
-    font-weight: 400;
-    font-style: normal;
-}
+
 $login-font: "Ubuntu", sans-serif !default;
 
-$green-dark: #134B44;
-$green-light: #1b6d61;
+$green-dark: #1b6d61;
+$green-light: #1A9283;
 $background-color :linear-gradient(
     180deg,
     $green-light 0%,
@@ -18,7 +13,7 @@ $background-color :linear-gradient(
     display: flex;
     flex-direction: row;
     
-    background-image: url("../../../assets/for_background.svg"),$background-color;
+    background-image: url("../../../assets/for_background_new.svg"),$background-color;
     background-position: center 0%;
     background-size: cover;
     min-height: 100vh;
@@ -38,12 +33,13 @@ $background-color :linear-gradient(
         width: 100%;
 
         display: flex;
-            
-        align-items: center; 
-        margin: 220px 90px 0 0;
+        align-items: center;
+        justify-content: center;
+        margin: 220px 0 0 0;
     }
     &__back{
-        margin-right: 180px;
+        position: relative;
+        right: 13%;
     }
     &__text{
         display: flex;
@@ -60,9 +56,11 @@ $background-color :linear-gradient(
  
     }
     &__title{
-        margin: 15px 0 0 150px;
+        margin: 15px 0 0 0;
         display: flex;
-        
+        align-items: center;
+        justify-content: center;
+        white-space: nowrap;
 
         font-family: $login-font;
         font-size: 20px;
@@ -72,14 +70,18 @@ $background-color :linear-gradient(
     // Для кнопок переключения
 
     &__button-switch-all{
-        margin: 15px 0 0 130px;
+        margin: 15px 0 0 0;
+        display: flex;
+        justify-content: center;
     }
 
     &__button-switch{
-        width: 100%;
-        max-width: 30%;
+        
+        
+        width: min(30%, 440px);
         border-radius: 6px;
         border: 1px solid #ffffff;
+        box-sizing: border-box;
         
     }
 
@@ -92,9 +94,11 @@ $background-color :linear-gradient(
 
     &__tab {
         flex: 1;
-        padding: 12px 20px;
+        padding: 10px;
         margin: 4px;
-        
+        width: fit-content;
+        white-space: nowrap;
+
         border: none;
         border-radius: 3px;
 
@@ -102,6 +106,7 @@ $background-color :linear-gradient(
         color: #ffffff4e;
 
         font-size: 15px;
+        font-family: $login-font;
         font-weight: 500;
 
         cursor: pointer;
@@ -121,296 +126,6 @@ $background-color :linear-gradient(
     //     display: flex;
     //     justify-content: center;
     // }
-    &__form-headline{
-        font-size: 16px;
-        margin: 15px 0 10px 0;
-        font-family: $login-font;
-        color: white;
-    }
-    &__phone {
-        position: relative;
-        display: flex;
-        align-items: center;
-        gap: 22px;
-
-        width: 100%;
-        max-width: 450px;
-        
-        padding: 10px;
-        box-sizing: border-box;
-
-        border: 2px solid #ffffff;
-        border-radius: 10px;
-        background: transparent;
-
-        transition: border-color 0.3s ease,
-                    background-color 0.3s ease;
-
-        &:focus-within {
-            border-color: #24D8C1;
-            background-color: #ffffff08;
-        }
-    }
-
-    &__phone-code {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        
-
-        flex-shrink: 0;
-
-        padding: 6px 6px;
-
-        border: none;
-        border-radius: 6px;
-        background: #d2eae7;
-        color: #134B44;
-
-        font-size: 14px;
-        font-weight: 700;
-        cursor: pointer;
-
-        transition: background-color 0.2s ease;
-
-        &:hover {
-            background: #ffffff;
-        }
-    }
-
-    &__phone-arrow {
-        padding-bottom: 7px;
-        font-size: 14px;
-    }
-
-    &__phone-number {
-        flex: 1;
-        min-width: 0;
-        height: 40px;
-
-        border: none;
-        outline: none;
-        background: transparent;
-        color: #ffffff;
-
-        font-size: 16px;
-        font-weight: 500;
-
-        &::placeholder {
-            color: #d0e9e6;
-            opacity: 1;
-            font-family: $login-font;
-        }
-    }
-
-    &__phone-dropdown {
-        position: absolute;
-        z-index: 10;
-        top: calc(100% + 8px);
-        left: 40px;
-
-        display: flex;
-        flex-direction: column;
-        gap: 4px;
-
-        width: 240px;
-        max-height: 250px;
-        overflow-y: auto;
-        padding: 8px;
-
-        border: 1px solid #ffffff30;
-        border-radius: 12px;
-        background: #134B44;
-        box-shadow: 0 10px 30px #00000030;
-
-        button {
-            padding: 12px;
-            border: none;
-            border-radius: 6px;
-            background: transparent;
-            color: #ffffff;
-            text-align: left;
-            font-size: 15px;
-            cursor: pointer;
-
-            &:hover {
-                background: #1F7A6C;
-            }
-        }
-    }
-
-    // &__form-write{
-    // }
-    &__password {
-        position: relative;
-        display: flex;
-        align-items: center;
-        gap: 22px;
-
-        width: 100%;
-        max-width: 450px;
-        
-        padding: 10px;
-        box-sizing: border-box;
-
-        border: 2px solid #ffffff;
-        border-radius: 10px;
-        background: transparent;
-
-        transition: border-color 0.3s ease,
-                    background-color 0.3s ease;
-
-        &:focus-within {
-            border-color: #24D8C1;
-            background-color: #ffffff08;
-        }
-    }
-
-    &__password-input {
-        flex: 1;
-        min-width: 0;
-        height: 40px;
-
-        border: none;
-        outline: none;
-        background: transparent;
-        color: #ffffff;
-
-        font-size: 16px;
-        font-weight: 500;
-
-        &::placeholder {
-            color: #d0e9e6;
-            opacity: 1;
-            font-family: $login-font;
-        }
-    }
-
-    &__password-toggle {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-shrink: 0;
-
-        width: 44px;
-        height: 44px;
-        padding: 8px;
-
-        border: none;
-        border-radius: 50%;
-        background: transparent;
-        color: #d0e9e6;
-        cursor: pointer;
-
-        transition: color 0.2s ease,
-                    background-color 0.2s ease;
-
-        &:hover {
-            color: #24D8C1;
-            background-color: #ffffff10;
-        }
-
-        svg {
-            display: block;
-            width: 100%;
-            height: 100%;
-        }
-    }
-
-    
-    
-    &__remember {
-        display: flex;
-        align-items: center;
-        margin-top: 20px;
-    }
-
-    &__remember-label {
-        display: inline-flex;
-        align-items: center;
-        gap: 12px;
-        cursor: pointer;
-        user-select: none;
-    }
-
-    &__remember-label input {
-        position: absolute;
-        width: 1px;
-        height: 1px;
-        opacity: 0;
-    }
-
-    &__checkbox {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-shrink: 0;
-
-        width: 22px;
-        height: 22px;
-        box-sizing: border-box;
-
-        border: 1.5px solid #ffffff80;
-        border-radius: 5px;
-        background: transparent;
-
-        transition: background-color 0.2s ease,
-                    border-color 0.2s ease;
-
-        &::after {
-            content: "";
-            
-
-            mask: url("../../../assets/register/Accepted.svg") no-repeat center;
-            transform: rotate(45deg) scale(0);
-            transition: transform 0.2s ease;
-        }
-    }
-
-    &__remember-label input:checked + .login__checkbox {
-        background: #24D8C1;
-        border-color: #24D8C1;
-
-        &::after {
-            transform: rotate(45deg) scale(1);
-        }
-    }
-
-    &__remember-label input:focus-visible + .login__checkbox {
-        outline: 2px solid #24D8C1;
-        outline-offset: 3px;
-    }
-
-    &__remember-text {
-        color: #ffffff;
-        font-size: 16px;
-        line-height: 1.4;
-        font-size: $login-font;
-    }
-    
-
-    &__remember-row {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 12px;
-        width: 100%;
-        margin-top: 20px;
-    }
-
-    &__forgot-password {
-        color: #24D8C1;
-        font-family: $login-font;
-        font-size: 16px;
-        text-decoration: none;
-        white-space: nowrap;
-        transition: color 0.2s ease;
-
-        &:hover {
-            color: #ffffff;
-            text-decoration: underline;
-        }
-    }
 }
 
 

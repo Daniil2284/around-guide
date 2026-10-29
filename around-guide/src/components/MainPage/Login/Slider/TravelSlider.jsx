@@ -2,8 +2,8 @@ import "./TravelSlider.scss"
 
 import { useState, useEffect } from "react";
 
-import image_register1 from "../../../assets/register/image_register1.jpg";
-import image_register2 from "../../../assets/register/image_register2.jpg";
+import image_register1 from "../../../../assets/register/image_register1.jpg";
+import image_register2 from "../../../../assets/register/image_register2.jpg";
 
 function TravelSlider() {
     const images = [

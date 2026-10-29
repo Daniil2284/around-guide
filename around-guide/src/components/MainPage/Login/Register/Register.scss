@@ -1,0 +1,434 @@
+@font-face {
+    font-family: "Ubuntu" ;
+    src: url("../../../assets/fonts/Ubuntu/Ubuntu-Medium.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+}
+$login-font: "Ubuntu", sans-serif !default;
+
+.register{
+    &__all-block{
+        display: flex;
+        justify-content: center;
+    }
+    &__name{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        justify-content: center;
+        width: 450px;
+        max-width: 100%;
+    }
+    &__first-name{
+        display: grid;
+        grid-template-columns: max-content;
+    }
+    &__name-text{
+        margin: 15px 0;
+
+        box-sizing: border-box;
+
+        
+        font-size: 16px;
+        font-family: $login-font;
+        color: white;
+    }
+
+    &__enter{
+        align-items: center;
+        
+        gap: 22px;
+    
+        width: 100%;
+        max-width: 450px;
+        
+        padding: 5px;
+        box-sizing: border-box;
+    
+        border: 2px solid #ffffff;
+        border-radius: 10px;
+        background: transparent;
+    
+        transition: border-color 0.3s ease,
+                    background-color 0.3s ease;
+    
+        &:focus-within {
+            border-color: #24D8C1;
+            background-color: #ffffff08;
+        }
+
+    }
+    &__enter-name{      
+        flex: 1;
+        min-width: 0;
+        height: 40px;
+
+        border: none;
+        outline: none;
+        background: transparent;
+        color: #ffffff;
+
+        font-size: 16px;
+        font-weight: 500;
+
+        &::placeholder {
+            color: #d0e9e6;
+            opacity: 1;
+            font-family: $login-font;
+        }
+    
+    }
+    &__last-name{
+        display: grid;
+        grid-template-columns: max-content;
+    }
+
+    &__form-headline {
+        display: flex;
+        justify-content: start;
+
+        width: 450px;
+        max-width: 100%;
+        box-sizing: border-box;
+
+        margin: 15px 0 10px;
+        font-size: 16px;
+        font-family: $login-font;
+        color: white;
+    }
+
+    &__phone-all{
+        display: flex;
+        justify-content: center;
+    }
+    &__phone {
+        position: relative;
+        display: flex;
+        align-items: center;
+        
+        gap: 22px;
+
+        width: 100%;
+        max-width: 450px;
+        
+        padding: 10px;
+        box-sizing: border-box;
+
+        border: 2px solid #ffffff;
+        border-radius: 10px;
+        background: transparent;
+
+        transition: border-color 0.3s ease,
+                    background-color 0.3s ease;
+
+        &:focus-within {
+            border-color: #24D8C1;
+            background-color: #ffffff08;
+        }
+    }
+
+    &__phone-code {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        
+
+        flex-shrink: 0;
+
+        padding: 6px 6px;
+
+        border: none;
+        border-radius: 6px;
+        background: #d2eae7;
+        color: #134B44;
+
+        font-size: 14px;
+        font-weight: 700;
+        cursor: pointer;
+
+        transition: background-color 0.2s ease;
+
+        &:hover {
+            background: #ffffff;
+        }
+    }
+
+    &__phone-arrow {
+        padding-bottom: 7px;
+        font-size: 14px;
+    }
+
+    &__phone-number {
+        flex: 1;
+        min-width: 0;
+        height: 40px;
+
+        border: none;
+        outline: none;
+        background: transparent;
+        color: #ffffff;
+
+        font-size: 16px;
+        font-weight: 500;
+
+        &::placeholder {
+            color: #d0e9e6;
+            opacity: 1;
+            font-family: $login-font;
+        }
+    }
+
+    &__phone-dropdown {
+        position: absolute;
+        z-index: 10;
+        top: calc(100% + 8px);
+        left: 40px;
+
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+
+        width: 240px;
+        max-height: 250px;
+        overflow-y: auto;
+        padding: 8px;
+
+        border: 1px solid #ffffff30;
+        border-radius: 12px;
+        background: #134B44;
+        box-shadow: 0 10px 30px #00000030;
+
+        button {
+            padding: 12px;
+            border: none;
+            border-radius: 6px;
+            background: transparent;
+            color: #ffffff;
+            text-align: left;
+            font-size: 15px;
+            cursor: pointer;
+
+            &:hover {
+                background: #1F7A6C;
+            }
+        }
+    }
+
+    &__form-write{
+        display: grid;
+        grid-template-columns: max-content;
+        justify-content: center;
+    }
+    &__password-display{
+        display: flex;
+        justify-content: center;
+    }
+    &__password {
+        position: relative;
+        display: flex;
+        justify-content: center ;
+        align-items: center;
+        gap: 22px;
+
+        width: 100%;
+        max-width: 450px;
+        
+        padding: 10px;
+        box-sizing: border-box;
+
+        border: 2px solid #ffffff;
+        border-radius: 10px;
+        background: transparent;
+
+        transition: border-color 0.3s ease,
+                    background-color 0.3s ease;
+
+        &:focus-within {
+            border-color: #24D8C1;
+            background-color: #ffffff08;
+        }
+    }
+
+    &__password-input {
+        flex: 1;
+        min-width: 0;
+        height: 40px;
+
+        border: none;
+        outline: none;
+        background: transparent;
+        color: #ffffff;
+
+        font-size: 16px;
+        font-weight: 500;
+
+        &::placeholder {
+            color: #d0e9e6;
+            opacity: 1;
+            font-family: $login-font;
+        }
+    }
+
+    &__password-toggle {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+
+        width: 44px;
+        height: 44px;
+        padding: 8px;
+
+        border: none;
+        border-radius: 50%;
+        background: transparent;
+        color: #d0e9e6;
+        cursor: pointer;
+
+        transition: color 0.2s ease,
+                    background-color 0.2s ease;
+
+        &:hover {
+            color: #24D8C1;
+            background-color: #ffffff10;
+        }
+
+        svg {
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    
+    
+    &__remember {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 20px;
+    }
+
+    &__remember-label {
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+        cursor: pointer;
+        user-select: none;
+    }
+
+    &__remember-label input {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        opacity: 0;
+    }
+
+   &__checkbox {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+
+        width: 22px;
+        height: 22px;
+        box-sizing: border-box;
+
+        border: 1.5px solid #ffffff80;
+        border-radius: 5px;
+        background: transparent;
+
+        transition:
+            background-color 0.2s ease,
+            border-color 0.2s ease;
+
+        &::after {
+            content: "";
+            display: block;
+
+            width: 14px;
+            height: 14px;
+
+            background-color: #134B44;
+
+            mask: url("../../../../assets/register/Accepted.svg")
+                no-repeat center;
+            mask-size: contain;
+
+            transform: scale(0);
+            transition: transform 0.2s ease;
+        }
+    }
+
+    &__remember-label input:checked + .register__checkbox {
+        background: #24D8C1;
+        border-color: #24D8C1;
+
+        &::after {
+            transform:scale(1);
+        }
+    }
+
+    
+    &__remember-text {
+        color: #ffffff;
+        font-size: 16px;
+        line-height: 1.4;
+        font-family: $login-font;
+        margin-right: 125px;
+    }
+    
+
+    &__remember-row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        width: 100%;
+        margin-top: 20px;
+    }
+
+    &__forgot-password {
+        color: #24D8C1;
+        font-family: $login-font;
+        font-size: 16px;
+        text-decoration: none;
+        white-space: nowrap;
+        transition: color 0.2s ease;
+
+        &:hover {
+            color: #ffffff;
+            text-decoration: underline;
+        }
+    }
+
+    &__accepted-btn_code{
+        max-width: 450px;
+        width: 100%;
+
+    }
+    &__accepted-btn{
+        width: 100%;
+        font-family: $login-font;
+        font-size: 20px;
+        background-color: #E17754;
+        color: white;
+    
+        margin-top: 40px;
+        padding: 14px 190px;
+
+        border-radius: 10px;
+        border: none;
+        cursor: pointer;
+
+        transition:
+            background-color 0.3s ease,
+            color 0.3s ease,
+            box-shadow 0.3s ease;
+
+        &:hover {
+            box-shadow: 0 3px 20px 10px #E17754;
+        }
+
+    }
+
+}

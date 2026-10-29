@@ -1,23 +1,25 @@
 .travel-slider {
     display: grid;
-    height: 100%;
-    width: 100vh;
-    max-width: 750px;
-    max-height: 960px;
+
+    width: min(2000px, 48vw);
+    height: min(2000px, 100dvh);
+
+    min-width: 200px;
+    border-radius: 20px;
 
     overflow: hidden;
 
     &__image {
-        
-        border-radius: clamp(10px, 4vh,20px);
         grid-area: 1 / 1;
-        
+
+        width: 100%;
         height: 100%;
-    
+
         object-fit: cover;
+        object-position: center;
 
         opacity: 0;
-        
+        transform: scale(1.05);
 
         transition:
             opacity 1.2s ease-in-out,
@@ -29,11 +31,3 @@
         }
     }
 }
-
-// @media(max-width:500px){
-//     .travel-slider{
-//         &__image{
-
-//         }
-//     }
-// }

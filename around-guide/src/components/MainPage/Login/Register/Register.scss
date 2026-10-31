@@ -13,17 +13,20 @@ $login-font: "Ubuntu", sans-serif !default;
     }
     &__name{
         display: grid;
-        grid-template-columns: repeat(2,1fr);
-        justify-content: center;
-        width: 450px;
-        max-width: 100%;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 16px;
+        width: 100%;
+        max-width: 450px;
+        box-sizing: border-box;
     }
-    &__first-name{
+    &__first-name,
+    &__last-name {
         display: grid;
-        grid-template-columns: max-content;
+        grid-template-columns: minmax(0, 1fr);
+        min-width: 0;
     }
     &__name-text{
-        margin: 15px 0;
+        margin: 20px 0 10px 0;
 
         box-sizing: border-box;
 
@@ -45,7 +48,7 @@ $login-font: "Ubuntu", sans-serif !default;
         box-sizing: border-box;
     
         border: 2px solid #ffffff;
-        border-radius: 10px;
+        border-radius: 12px;
         background: transparent;
     
         transition: border-color 0.3s ease,
@@ -61,6 +64,7 @@ $login-font: "Ubuntu", sans-serif !default;
         flex: 1;
         min-width: 0;
         height: 40px;
+        padding: 0 0 0 10px;
 
         border: none;
         outline: none;
@@ -77,20 +81,16 @@ $login-font: "Ubuntu", sans-serif !default;
         }
     
     }
-    &__last-name{
-        display: grid;
-        grid-template-columns: max-content;
-    }
+
 
     &__form-headline {
-        display: flex;
-        justify-content: start;
+
 
         width: 450px;
         max-width: 100%;
         box-sizing: border-box;
 
-        margin: 15px 0 10px;
+        margin: 10px 0 10px;
         font-size: 16px;
         font-family: $login-font;
         color: white;
@@ -114,7 +114,7 @@ $login-font: "Ubuntu", sans-serif !default;
         box-sizing: border-box;
 
         border: 2px solid #ffffff;
-        border-radius: 10px;
+        border-radius: 12px;
         background: transparent;
 
         transition: border-color 0.3s ease,
@@ -213,14 +213,32 @@ $login-font: "Ubuntu", sans-serif !default;
         }
     }
 
+    &__all-input{
+
+        width: 100%;
+        min-width: 0;
+        box-sizing: border-box;
+        
+        padding: 0 20px;
+    }
+
     &__form-write{
         display: grid;
-        grid-template-columns: max-content;
-        justify-content: center;
+        grid-template-columns: minmax(0, 1fr);
+
+        width: 100%;
+        max-width: 450px;
+        min-width: 0;
+
+        margin: 0 auto;
+        box-sizing: border-box;
     }
     &__password-display{
         display: flex;
         justify-content: center;
+
+        width: 100%;
+        min-width: 0;
     }
     &__password {
         position: relative;
@@ -236,7 +254,7 @@ $login-font: "Ubuntu", sans-serif !default;
         box-sizing: border-box;
 
         border: 2px solid #ffffff;
-        border-radius: 10px;
+        border-radius: 12px;
         background: transparent;
 
         transition: border-color 0.3s ease,
@@ -279,7 +297,7 @@ $login-font: "Ubuntu", sans-serif !default;
         padding: 8px;
 
         border: none;
-        border-radius: 50%;
+        
         background: transparent;
         color: #d0e9e6;
         cursor: pointer;
@@ -299,21 +317,33 @@ $login-font: "Ubuntu", sans-serif !default;
         }
     }
 
-    
+    &__remember-all{
+        display: flex;
+        justify-content: center;
+    }
+
     
     &__remember {
         display: flex;
         align-items: center;
-        justify-content: center;
-        margin-top: 20px;
+        justify-content: space-between;
+        gap: 12px;
+
+        width: 100%;
+        max-width: 450px;
+        min-width: 0;
+
+        margin-top: 10px;
+        
     }
 
     &__remember-label {
-        display: inline-flex;
+        display: flex;
         align-items: center;
         gap: 12px;
         cursor: pointer;
         user-select: none;
+        white-space: nowrap;
     }
 
     &__remember-label input {
@@ -334,7 +364,7 @@ $login-font: "Ubuntu", sans-serif !default;
         box-sizing: border-box;
 
         border: 1.5px solid #ffffff80;
-        border-radius: 5px;
+        border-radius: 6px;
         background: transparent;
 
         transition:
@@ -369,14 +399,23 @@ $login-font: "Ubuntu", sans-serif !default;
     }
 
     
+    &__remember-row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+
+        width: 100%;
+        max-width: 450px;
+        margin-top: 20px;
+    }
+
     &__remember-text {
+        margin: 0;
         color: #ffffff;
         font-size: 16px;
-        line-height: 1.4;
         font-family: $login-font;
-        margin-right: 125px;
     }
-    
 
     &__remember-row {
         display: flex;
@@ -401,11 +440,21 @@ $login-font: "Ubuntu", sans-serif !default;
         }
     }
 
+    &__accepted-btn_all{
+        display: flex;
+        justify-content: center;
+    }
+
+    &__accepted-btn_code{
+        display: flex;
+        justify-content: center;
+    }
+
     &__accepted-btn_code{
         max-width: 450px;
         width: 100%;
-
     }
+
     &__accepted-btn{
         width: 100%;
         font-family: $login-font;
@@ -414,11 +463,12 @@ $login-font: "Ubuntu", sans-serif !default;
         color: white;
     
         margin-top: 40px;
-        padding: 14px 190px;
+        padding: 14px 20px;
 
-        border-radius: 10px;
+        border-radius: 12px;
         border: none;
         cursor: pointer;
+        box-sizing: border-box;
 
         transition:
             background-color 0.3s ease,
@@ -432,3 +482,111 @@ $login-font: "Ubuntu", sans-serif !default;
     }
 
 }
+
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0 1000px transparent inset !important;
+    -webkit-text-fill-color: white !important;
+    transition: background-color 9999s ease-in-out 0s;
+    
+}
+
+
+
+
+@media (max-width: 768px) {
+
+    .register {
+
+        &__all-block {
+            width: 100%;
+            padding: 0 20px;
+            box-sizing: border-box;
+        }
+
+        &__name {
+            grid-template-columns: 1fr;
+            gap: 0;
+            
+        }
+
+        &__first-name,
+        &__last-name {
+            width: 100%;
+        }
+
+        &__form-write {
+            width: 100%;
+            max-width: 450px;
+            grid-template-columns: minmax(0, 1fr);
+            
+            box-sizing: border-box;
+        }
+
+        &__form-headline {
+            font-size: 15px;
+        }
+
+        &__name-text {
+            font-size: 15px;
+        }
+
+
+        &__enter,
+        &__phone,
+        &__password {
+            padding: 7px;
+            border-radius: 10px;
+        }
+
+        &__enter-name,
+        &__phone-number,
+        &__password-input {
+            height: 42px;
+            font-size: 15px;
+        }
+
+        &__phone-code {
+            font-size: 13px;
+            padding: 6px;
+        }
+
+        &__password-toggle {
+            width: 38px;
+            height: 38px;
+        }
+
+        &__remember-row {
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        &__remember{
+            display: flex;
+            justify-content: space-between;
+            
+        }
+
+        &__remember-text,
+        &__forgot-password {
+            font-size: 13px;
+        }
+        
+        &__checkbox {
+            width: 20px;
+            height: 20px;
+        }
+
+        &__accepted-btn {
+            margin-top: 25px;
+            padding: 13px 15px;
+            font-size: 17px;
+            border-radius: 10px;
+        }
+    }
+}
+
+

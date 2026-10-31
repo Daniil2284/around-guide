@@ -1,7 +1,7 @@
 .travel-slider {
     display: grid;
 
-    width: min(2000px, 48vw);
+    
     height: min(2000px, 100dvh);
 
     min-width: 200px;
@@ -29,5 +29,12 @@
             opacity: 1;
             transform: scale(1);
         }
+    }
+}
+
+@media(max-width: 768px){
+    .travel-slider{
+        
+        display: none;
     }
 }

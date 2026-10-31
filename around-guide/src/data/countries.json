@@ -1,0 +1,14 @@
+{
+    "ID": {
+        "name": "Indonesia",
+        "code": "+62"
+    },
+    "RU": {
+        "name": "Russia",
+        "code": "+7"
+    },
+    "US": {
+        "name": "United States",
+        "code": "+1"
+    }
+}

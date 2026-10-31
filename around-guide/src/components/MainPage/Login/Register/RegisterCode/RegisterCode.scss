@@ -1,0 +1,181 @@
+.register-code {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    width: 100%;
+    max-width: 700px;
+
+    margin: 0 auto;
+
+
+    &__inputs {
+
+        display: flex;
+        justify-content: center;
+
+        gap: 30px;
+
+        width: 100%;
+        max-width: 465px;
+
+    }
+
+
+    &__input {
+
+        width: 90px;
+        height: 90px;
+
+        box-sizing: border-box;
+
+        border: 2px solid #ffffff;
+        border-radius: 16px;
+
+        background: transparent;
+
+        outline: none;
+
+        color: #ffffff;
+
+        font-family: $login-font;
+        font-size: 36px;
+        font-weight: 600;
+
+        text-align: center;
+
+        caret-color: #24D8C1;
+
+        transition:
+            border-color 0.3s ease,
+            background-color 0.3s ease;
+
+
+        &:focus {
+
+            border-color: #24D8C1;
+            background-color: #ffffff08;
+
+        }
+
+    }
+
+
+    &__confirm {
+
+        width: 100%;
+        max-width: 700px;
+
+        margin-top: 185px;
+
+        padding: 18px 20px;
+
+        box-sizing: border-box;
+
+        border: none;
+        border-radius: 16px;
+
+        background-color: #E17754;
+
+        color: #ffffff;
+
+        font-family: $login-font;
+        font-size: 30px;
+        font-weight: 600;
+
+        cursor: pointer;
+
+        transition:
+            background-color 0.3s ease,
+            opacity 0.3s ease;
+
+
+        &:hover:not(:disabled) {
+
+            background-color: #ed8968;
+
+        }
+
+
+        &:disabled {
+
+            opacity: 0.5;
+            cursor: not-allowed;
+
+        }
+
+    }
+
+}
+
+@media (max-width: 768px) {
+
+    .register-code {
+
+        &__inputs {
+            gap: 20px;
+        }
+
+        &__input {
+            width: 75px;
+            height: 75px;
+            font-size: 30px;
+        }
+
+        &__confirm {
+            margin-top: 100px;
+            font-size: 24px;
+        }
+
+    }
+
+}
+
+
+@media (max-width: 480px) {
+
+    .register-code {
+
+        padding: 0 20px;
+        box-sizing: border-box;
+
+        &__inputs {
+            gap: 12px;
+        }
+
+        &__input {
+            width: 100%;
+            max-width: 65px;
+            height: 65px;
+            font-size: 26px;
+            border-radius: 12px;
+        }
+
+        &__confirm {
+            margin-top: 70px;
+            padding: 14px;
+            font-size: 20px;
+        }
+
+    }
+
+}
+
+
+@media (max-width: 360px) {
+
+    .register-code {
+
+        &__inputs {
+            gap: 8px;
+        }
+
+        &__input {
+            max-width: 58px;
+            height: 58px;
+        }
+
+    }
+
+}

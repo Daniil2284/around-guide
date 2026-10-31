@@ -27,7 +27,14 @@ function Login(){
                     <h1 className="login__text">Welcome!</h1>
                 </div>
                 <div className="login__form">
-                    <p className="login__title">Please enter your details login</p>
+                    {activeTab === "signin" ? (
+                        <>
+                        <p className="login__title">Please enter your details login</p>
+                        </>
+                    ): (
+                         <p className="login__title">Please enter your details register</p>
+                    )}
+                   
                     
                     <div className="login__button-switch-all">
 

@@ -78,7 +78,7 @@ $background-color :linear-gradient(
     &__button-switch{
         
         
-        width: min(30%, 440px);
+        width: min(50%, 440px);
         border-radius: 6px;
         border: 1px solid #ffffff;
         box-sizing: border-box;
@@ -126,6 +126,17 @@ $background-color :linear-gradient(
     //     display: flex;
     //     justify-content: center;
     // }
+}
+
+@media(max-width: 768px){
+    .login{
+        &__image{
+            display: none;
+        }
+        &__tab{
+            padding: 5px;
+        }
+    }
 }
 
 

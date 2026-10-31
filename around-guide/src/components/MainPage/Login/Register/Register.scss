@@ -1,6 +1,6 @@
 @font-face {
     font-family: "Ubuntu" ;
-    src: url("../../../assets/fonts/Ubuntu/Ubuntu-Medium.ttf") format("truetype");
+    src: url("../../../../assets/fonts/Ubuntu/Ubuntu-Medium.ttf") format("truetype");
     font-weight: 400;
     font-style: normal;
 }
@@ -30,7 +30,6 @@ $login-font: "Ubuntu", sans-serif !default;
 
         box-sizing: border-box;
 
-        
         font-size: 16px;
         font-family: $login-font;
         color: white;
@@ -38,13 +37,11 @@ $login-font: "Ubuntu", sans-serif !default;
 
     &__enter{
         align-items: center;
-        
-        gap: 22px;
     
         width: 100%;
         max-width: 450px;
         
-        padding: 5px;
+        padding: 10px;
         box-sizing: border-box;
     
         border: 2px solid #ffffff;
@@ -64,7 +61,7 @@ $login-font: "Ubuntu", sans-serif !default;
         flex: 1;
         min-width: 0;
         height: 40px;
-        padding: 0 0 0 10px;
+        
 
         border: none;
         outline: none;
@@ -141,7 +138,7 @@ $login-font: "Ubuntu", sans-serif !default;
         background: #d2eae7;
         color: #134B44;
 
-        font-size: 14px;
+        font-size: clamp(0.5rem, 2vw, 0.8rem);
         font-weight: 700;
         cursor: pointer;
 
@@ -249,6 +246,7 @@ $login-font: "Ubuntu", sans-serif !default;
 
         width: 100%;
         max-width: 450px;
+        max-height: 64px;
         
         padding: 10px;
         box-sizing: border-box;
@@ -503,7 +501,7 @@ input:-webkit-autofill:active {
 
         &__all-block {
             width: 100%;
-            padding: 0 20px;
+            
             box-sizing: border-box;
         }
 
@@ -539,14 +537,14 @@ input:-webkit-autofill:active {
         &__phone,
         &__password {
             padding: 7px;
-            border-radius: 10px;
+           
         }
 
         &__enter-name,
         &__phone-number,
         &__password-input {
             height: 42px;
-            font-size: 15px;
+            font-size: clamp(0.8rem, 2vw, 1em);
         }
 
         &__phone-code {
@@ -590,3 +588,9 @@ input:-webkit-autofill:active {
 }
 
 
+@media(max-width:1200px){
+    .register__name{
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+}

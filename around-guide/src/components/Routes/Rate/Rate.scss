@@ -1,8 +1,9 @@
 @font-face {
     font-family: "IBM Plex Mono";
-    src: url("../../assets/fonts/IBM-PLEX/IBMPlexMono-Bold.ttf");
+    src: url("../../../assets/fonts/IBM-PLEX/IBMPlexMono-Medium.ttf");
     font-style: normal;
 }
+
 $font-converter-currency: "IBM Plex Mono", sans-serif;
 
 .rate {

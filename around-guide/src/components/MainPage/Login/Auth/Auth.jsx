@@ -1,10 +1,13 @@
 import "./Auth.scss"
 
 import { useState, useEffect } from "react";
+import { useTranslation } from "react-i18next";
 
 import countries from "../../../../data/countries.json"
 
 function Auth(){
+        const {t} = useTranslation();
+
         const [phone, setPhone] = useState("");
         const [countryCode, setCountryCode] = useState("+62");
         const [showCountries, setShowCountries] = useState(false);
@@ -31,7 +34,7 @@ function Auth(){
             <div className="login__all-input">
                 <div className="login__form-write">
                     <div className="login__form-headline">
-                        <label htmlFor="phone">Phone number</label>
+                        <label htmlFor="phone">{t("register-login.phone")}</label>
                     </div>
                     <div className="login__phone-all">
 
@@ -73,7 +76,7 @@ function Auth(){
                                         const numbersOnly = event.target.value.replace(/\D/g, "");
                                         setPhone(numbersOnly);
                                     }}
-                                    placeholder="Enter your phone number"
+                                    placeholder={t("register-login.enter-phone")}
                                 />
                             </div>
                     </div>
@@ -81,7 +84,7 @@ function Auth(){
 
                 <div className="login__form-write">
                     <div className="login__form-headline">
-                        <label htmlFor="pass">Password</label>
+                        <label htmlFor="pass">{t("register-login.password")}</label>
                     </div>
 
                     <div className="login__password-display">
@@ -94,7 +97,7 @@ function Auth(){
                                 type={showPassword ? "text" : "password"}
                                 value={password}
                                 onChange={(event) => setPassword(event.target.value)}
-                                placeholder="Enter your password"
+                                placeholder={t("register-login.enter-password")}
                                 autoComplete="current-password"
                                 required
                             />
@@ -152,11 +155,11 @@ function Auth(){
                             <span className="login__checkbox"></span>
 
                             <span className="login__remember-text">
-                                Remember password
+                                {t("register-login.remember")}
                             </span>
                         </label>
                         <a href="/forgot-password" className="login__forgot-password">
-                            Forgot password?
+                            {t("register-login.forgot")}
                         </a>
                     </div>
 
@@ -164,7 +167,7 @@ function Auth(){
                 <div className="login__accepted-btn_all">
 
                     <div className="login__accepted-btn_code">
-                        <button type="button" className="login__accepted-btn" onClick={handleSendCode}>Sign up</button>
+                        <button type="button" className="login__accepted-btn" onClick={handleSendCode}>{t("register-login.sign-in")}</button>
                     </div>
                 </div>
 

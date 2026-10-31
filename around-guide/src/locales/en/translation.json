@@ -70,5 +70,25 @@
         "current-weather" : "Current weather",
         "conditions" : "Conditions",
         "precipitation" : "Light rain"
-    } 
+    },
+    "login" : {
+        "headline": "Welcome!",
+        "login-title_sign-in": "Please enter your details login",
+        "login-title_register": "Please enter your details register",
+        "sign-in": "Sign in",
+        "register": "Sign up"
+    },
+    "register-login": {
+        "name": "Name",
+        "last-name": "Last Name",
+        "phone": "Number phone",
+        "enter-phone": "Please enter phone number",
+        "password": "Password",
+        "enter-password": "Please enter password",
+        "remember": "Remember password",
+        "forgot": "Forgot password?",
+        "register": "Register",
+        "sign-in": "Sign in"
+        
+    }
 }

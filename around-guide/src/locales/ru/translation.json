@@ -69,5 +69,27 @@
         "current-weather" : "Текущая погода",
         "conditions" : "Условия",
         "precipitation" : "Небольшой дождь"
-    } 
+    },
+
+    "login" : {
+        "headline": "Добро пожаловать!",
+        "login-title_sign-in": "Заполните все поля для входа в аккаунт",
+        "login-title_register": "Заполните все поля для регистрации аккаунта",
+        "sign-in": "Войти",
+        "register": "Создать"
+    },
+
+    "register-login": {
+        "name": "Имя",
+        "last-name": "Фамилия",
+        "phone": "Номер телефона",
+        "enter-phone": "Введите номер телефона",
+        "password": "Пароль",
+        "enter-password": "Введите пароль",
+        "remember": "Запомнить пароль",
+        "forgot": "Забыли пароль?",
+        "register": "Зарегистрироваться",
+        "sign-in": "Войти"
+        
+    }
 }

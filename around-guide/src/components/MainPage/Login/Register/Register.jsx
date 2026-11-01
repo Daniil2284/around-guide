@@ -5,6 +5,7 @@ import { useTranslation } from "react-i18next";
 
 import countries from "../../../../data/countries.json"
 import RegisterCode from "./RegisterCode/RegisterCode";
+import Alert from "./Alert/Alert";
 
 
 function Register(){
@@ -22,13 +23,14 @@ function Register(){
         const [showCode, setShowCode] = useState(false);
         const [name, setName] = useState("");
         const [lastName, setLastName] = useState("");
-        const [email, setEmail] = useState("");
-        const [phoneNumber, setPhoneNumber] = useState("");
-        const [passwordWrite, setPasswordWrite] = useState("");
-        const [confirmPassword, setConfirmPassword] = useState("");
 
-        const [error, setError] = useState("");
+        const [alertMessage, setAlertMessage] = useState("");
+        const [showAlert, setShowAlert] = useState(false);
 
+        const RegularSymbol =  /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*])[A-Za-z\d!@#$%^&*]{8,16}$/;
+        const MinLengthPassword = 8;
+        const MaxLengthPassword = 20;
+        const MinPhoneNumber = 10;
 
         const handleSendCode = (event) => {
                 event.preventDefault();
@@ -39,9 +41,40 @@ function Register(){
                 phone.trim() === "" ||
                 password.trim() === "" 
             ) {
-                alert("Please fill in all fields");
+                setAlertMessage(t("register-field.fill"));
+                setShowAlert(true);
                 return;
             }
+            if (
+                phone.length < MinPhoneNumber 
+            ) {
+                setAlertMessage(t("register-field.phone"));
+                setShowAlert(true);
+                return;
+            }
+            if (
+                password.length < MinLengthPassword
+            ) {
+                setAlertMessage(t("register-field.min"));
+                setShowAlert(true);
+                return;
+            }
+            if (
+                password.length > MaxLengthPassword
+            ){  
+                setAlertMessage(t("register-field.max"));
+                setShowAlert(true);
+                return;
+            }
+            if (
+                !RegularSymbol.test(password)
+                
+            ) {
+                setAlertMessage(t("register-field.symbol"));
+                setShowAlert(true);
+                return;
+            }
+
 
             // if (password !== confirmPassword) {
             //     alert("Passwords do not match");
@@ -50,7 +83,7 @@ function Register(){
 
             // setError("");
             // alert(setError(""));
-
+            setShowAlert(false);
             setShowCode(true)
         }
 
@@ -62,6 +95,11 @@ function Register(){
 
     return(
         <>
+            <Alert
+                alertMessage={alertMessage}
+                showAlert={showAlert}
+                setShowAlert={setShowAlert}
+            />
             {showCode ? (
                 <RegisterCode />
             ) : (

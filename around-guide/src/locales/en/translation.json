@@ -75,6 +75,7 @@
         "headline": "Welcome!",
         "login-title_sign-in": "Please enter your details login",
         "login-title_register": "Please enter your details register",
+        "login-title_code" : "Please enter the verification code sent to your WhatsApp.",
         "sign-in": "Sign in",
         "register": "Sign up"
     },
@@ -90,5 +91,12 @@
         "register": "Register",
         "sign-in": "Sign in"
         
+    },
+    "register-field": {
+        "fill" : "Please fill in all fields",
+        "phone" : "Please enter the full number",
+        "min" : "Password must contain at least 8 characters",
+        "max" : "Password max contain at least 20 characters",
+        "symbol" : "Password contains invalid characters"
     }
 }

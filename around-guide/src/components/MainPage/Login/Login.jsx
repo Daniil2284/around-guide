@@ -80,11 +80,17 @@ function Login(){
                 </div>
                 <div className="login__form">
                     {activeTab === "signin" ? (
-                        <>
-                        <p className="login__title">{t("login.login-title_sign-in")}</p>
-                        </>
-                    ): (
-                         <p className="login__title">{t("login.login-title_register")}</p>
+                        <p className="login__title">
+                            {t("login.login-title_sign-in")}
+                        </p>
+                    ) : activeTab === "signup" ? (
+                        <p className="login__title">
+                            {t("login.login-title_register")}
+                        </p>
+                    ) : (
+                        <p className="login__title">
+                            {t("login.login-title_code")}
+                        </p>
                     )}
                    
                     

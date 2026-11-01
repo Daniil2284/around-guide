@@ -47,7 +47,7 @@ $background-color :linear-gradient(
 
     &__headline{
         width: 100%;
-
+        padding: 0 20px;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -171,7 +171,7 @@ $background-color :linear-gradient(
 @media(max-width: 360px){
     .login{
         &__text{
-            font-size: clamp(1.5rem, 4vw, 3rem);
+            font-size: clamp(1rem, 4vw, 3rem);
         }
     }
 }

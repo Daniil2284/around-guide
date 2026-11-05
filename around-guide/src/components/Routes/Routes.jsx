@@ -346,7 +346,7 @@ function Routes() {
 
                         <div className="calc">
 
-                            <img className="calc__background-img" src="../../src/assets/convertor/convertor.png" alt=""></img>
+                            <img className="calc__background-img" src="../../src/assets/convertor/convertor-test.png" alt=""></img>
                             <div className="calc__content">
                                 
                                 <div className="calc__swapp">

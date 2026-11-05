@@ -7,39 +7,46 @@
 }
 $font-scrollMenu: "IBM Plex Mono", sans-serif !default;
 
-
 .scrollMenu {
-    
     display: flex;
     justify-content: center;
     align-items: center;
-    
+
+    width: 100%;
+    box-sizing: border-box;
+
+    &__main {
+        width: calc(100% - 80px);
+        max-width: 1000px;
+        min-width: 0;
+    }
+
     &__menu {
         display: flex;
+        width: 100%;
         overflow-x: auto;
-        width: 100vh;
-        
         scrollbar-width: none;
-        
     }
+
+    &__menu::-webkit-scrollbar {
+        display: none;
+    }
+
     &__line {
-        width: auto;
+        width: 100%;
         height: 1px;
         background-color: white;
         opacity: 0.3;
     }
+
     &__flag {
         width: 30px;
-
+        flex-shrink: 0;
     }
-    &__rate{
+
+    &__rate {
         opacity: 0.7;
     }
-}
-
-
-.scrollMenu__menu::-webkit-scrollbar {
-    display: none;
 }
 
 .scrollMenu__items {
@@ -51,7 +58,6 @@ $font-scrollMenu: "IBM Plex Mono", sans-serif !default;
     gap: 10px;
     font-family: $font-scrollMenu;
     color: white;
-    
     font-weight: 400;
 }
 
@@ -63,29 +69,22 @@ $font-scrollMenu: "IBM Plex Mono", sans-serif !default;
     color: #f3714d;
 }
 
-
-@media(max-width:900px){
-    .scrollMenu{
-        &__menu{
-            max-width: 900px;
-            width: 90vh;
-        }
-    }
-}
-
-@media(max-width:768px){
-    .scrollMenu{
-        &__menu{
-            
-            width: 90vh;
-        }
-    }
-}
-@media(max-width:700px){
-    .scrollMenu{
+/* Мобильные устройства */
+@media (max-width: 700px) {
+    .scrollMenu {
         margin-top: 50px;
-        &__menu{
-            width: clamp(200px, 80vw, 500px);
+
+        &__main {
+            width: calc(100% - 80px);
+        }
+
+        &__items {
+            font-size: 12px;
+            gap: 7px;
+        }
+
+        &__flag {
+            width: 24px;
         }
     }
 }

@@ -65,7 +65,7 @@ $font-headline-desc: "Forum", sans-serif !default;
     // }
 
     &__logotype{
-        padding-right: 250px;
+        padding-right: clamp(100px,18vw,250px);
     }
 
 
@@ -126,7 +126,7 @@ $font-headline-desc: "Forum", sans-serif !default;
         width: 230px;
         height: 40px;
         font-family: $Montserrat-font;
-        font-size: 15px;
+        font-size: clamp(10px,1.2vw,15px);
         border: 1px solid rgba(255, 255, 255, 0.22);
         border-radius: 18px;
 
@@ -162,10 +162,11 @@ $font-headline-desc: "Forum", sans-serif !default;
     &__log_in{
         width: 100px;
         height: 40px;
+   
         border-radius: 20px;
         font-family: $main-font;
         font-weight: 800;
-        font-size: 14px;
+        font-size: clamp(10px,1.2vw,14px);
         background: none;
 
         

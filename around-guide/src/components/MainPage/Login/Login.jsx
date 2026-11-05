@@ -87,33 +87,47 @@ function Login(){
                         <p className="login__title">
                             {t("login.login-title_register")}
                         </p>
-                    ) : (
+                    ) : activeTab === "sendCode" ? (
                         <p className="login__title">
                             {t("login.login-title_code")}
                         </p>
-                    )}
+                    ) : null}
                    
                     
-                    <div className="login__button-switch-all">
+                    {activeTab !== "sendCode" && (
+                        <div className="login__button-switch-all">
 
-                        <div className="login__button-switch">
-                            <div className="login__button-switch__elements">
-                                <button className={activeTab === "signin" ? "login__tab login__tab--active" : "login__tab"}
-                                onClick={() => setActiveTab("signin")} type="button">{t("login.sign-in")}</button>
-                                <button className={activeTab === "signup" ? "login__tab login__tab--active" : "login__tab"}
-                                onClick={() => setActiveTab("signup")} type="button">{t("login.register")}</button>
+                            <div className="login__button-switch">
+                                <div className="login__button-switch__elements">
 
+                                    <button
+                                        className={activeTab === "signin" ? "login__tab login__tab--active" : "login__tab"}
+                                        onClick={() => setActiveTab("signin")}
+                                        type="button"
+                                    >
+                                        {t("login.sign-in")}
+                                    </button>
+
+                                    <button
+                                        className={activeTab === "signup" ? "login__tab login__tab--active" : "login__tab"}
+                                        onClick={() => setActiveTab("signup")}
+                                        type="button"
+                                    >
+                                        {t("login.register")}
+                                    </button>
+
+                                </div>
                             </div>
-                        </div>
 
-                    </div>
+                        </div>
+                    )}
                     
                     {activeTab === "signin" ? (
                         <>
                         <Auth />
                         </>
                     ): (
-                        <Register />
+                        <Register setActiveTab={setActiveTab}/>
                     )}
 
                 </div>

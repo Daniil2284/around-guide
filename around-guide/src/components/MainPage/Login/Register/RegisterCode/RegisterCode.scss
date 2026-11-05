@@ -36,7 +36,7 @@
         background: transparent;
 
         outline: none;
-
+        
         color: #ffffff;
 
         // font-family: $login-font;
@@ -46,6 +46,7 @@
         text-align: center;
 
         caret-color: #24D8C1;
+        
 
         transition:
             border-color 0.3s ease,
@@ -55,7 +56,8 @@
         &:focus {
 
             border-color: #24D8C1;
-            background-color: #ffffff08;
+            
+            background-color: #E17754;
 
         }
 

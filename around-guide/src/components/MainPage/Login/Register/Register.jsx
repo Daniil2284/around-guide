@@ -8,7 +8,7 @@ import RegisterCode from "./RegisterCode/RegisterCode";
 import Alert from "./Alert/Alert";
 
 
-function Register(){
+function Register({setActiveTab}){
         const {t} = useTranslation();
         const [phone, setPhone] = useState("");
         const [countryCode, setCountryCode] = useState("+62");
@@ -84,7 +84,8 @@ function Register(){
             // setError("");
             // alert(setError(""));
             setShowAlert(false);
-            setShowCode(true)
+            setShowCode(true);
+            setActiveTab("sendCode");
         }
 
         const handleregister = (e) => {

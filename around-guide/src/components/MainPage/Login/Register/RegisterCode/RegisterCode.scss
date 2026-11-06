@@ -1,3 +1,6 @@
+@use "../Register.scss" as *;
+$login-font: "Ubuntu", sans-serif !default;
+
 .register-code {
 
     display: flex;
@@ -7,7 +10,7 @@
     width: 100%;
     max-width: 700px;
 
-    margin: 0 auto;
+    margin:clamp(15px,2vw,50px) auto;
 
 
     &__inputs {
@@ -25,8 +28,8 @@
 
     &__input {
 
-        width: 90px;
-        height: 90px;
+        width: clamp(80px,6vw,100px);
+        height: clamp(80px,6vw,100px);
 
         box-sizing: border-box;
 
@@ -39,7 +42,7 @@
         
         color: #ffffff;
 
-        // font-family: $login-font;
+        font-family: $login-font;
         font-size: 36px;
         font-weight: 600;
 
@@ -67,24 +70,22 @@
     &__confirm {
 
         width: 100%;
-        max-width: 700px;
-
-        margin-top: 185px;
-
-        padding: 18px 20px;
+        max-width: 450px;
+        margin-top: 40px;
+        padding: 14px 20px;
 
         box-sizing: border-box;
 
         border: none;
-        border-radius: 16px;
+        border-radius: 12px;
 
         background-color: #E17754;
 
         color: #ffffff;
 
-        // font-family: $login-font;
-        font-size: 30px;
-        font-weight: 600;
+        font-family: $login-font;
+        font-size: clamp(14px, 2vw,20px);
+        font-weight: 400;
 
         cursor: pointer;
 

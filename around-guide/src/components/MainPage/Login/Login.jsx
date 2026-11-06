@@ -9,35 +9,14 @@ import button_back from "../../../assets/register/back.svg"
 import TravelSlider from "./Slider/TravelSlider";
 import Auth from "./Auth/Auth";
 import Register from "./Register/Register";
+import Forgot_password from "./Forgot-password/Forgot-password";
+import RegisterCode from "./Register/RegisterCode/RegisterCode";
+import ResetPassword from "./ResetPassword/ResetPassword";
 
 function Login(){
     const { t, i18n } = useTranslation();
     const [activeTab, setActiveTab] = useState("signin");
-    const [isOpen, setIsOpen] = useState(false);
-    const languageRef = useRef(null);
-
-    useEffect(() => {
-        const handleClickOutside = (event) => {
-            if (
-                languageRef.current &&
-                !languageRef.current.contains(event.target)
-            ) {
-                setIsOpen(false);
-                // setMenuOpen(false);
-            }
-        };
-
-        document.addEventListener("mousedown", handleClickOutside);
-
-        return () => {
-            document.removeEventListener("mousedown", handleClickOutside);
-        };
-    }, []);
-
-    const changeLanguage = (language) => {
-        i18n.changeLanguage(language);
-        setIsOpen(false);
-    };
+    const [codeMode, setCodeMode] = useState("register");
 
     return (
         <div className="login">
@@ -50,51 +29,35 @@ function Login(){
 
                 <div className="login__headline">
                     <div className="login__back">
-                        <Link to="/"><img src={button_back} alt="button_back" /></Link>
+                        <Link  to="/"><img className="login__back-button" src={button_back} alt="button_back" /></Link>
                     </div>
                     <h1 className="login__text">{t("login.headline")}</h1>
-                    {/* <div className="language" ref={languageRef}>
-                        <button
-                            className="language__button-login"
-                            onClick={() => setIsOpen(!isOpen)}
-                            aria-expanded={isOpen}
-                        >
-                            {i18n.language === "ru" ? "RU" : "EN"}
-                            <span>⌄</span>
-                        </button>
-
-                        <div
-                            className={`language__dropdown ${
-                                isOpen ? "language__dropdown--open" : ""
-                            }`}
-                        >
-                            <button onClick={() => changeLanguage("ru")}>
-                                RU
-                            </button>
-
-                            <button onClick={() => changeLanguage("en")}>
-                                EN
-                            </button>
-                        </div>
-                    </div> */}
                 </div>
                 <div className="login__form">
-                    {activeTab === "signin" ? (
-                        <p className="login__title">
-                            {t("login.login-title_sign-in")}
-                        </p>
-                    ) : activeTab === "signup" ? (
-                        <p className="login__title">
-                            {t("login.login-title_register")}
-                        </p>
-                    ) : activeTab === "sendCode" ? (
-                        <p className="login__title">
-                            {t("login.login-title_code")}
-                        </p>
-                    ) : null}
+                {activeTab === "signin" ? (
+                    <p className="login__title">
+                        {t("login.login-title_sign-in")}
+                    </p>
+                ) : activeTab === "signup" ? (
+                    <p className="login__title">
+                        {t("login.login-title_register")}
+                    </p>
+                ) : activeTab === "sendCode" ? (
+                    <p className="login__title">
+                        {t("login.login-title_code")}
+                    </p>
+                ) : activeTab === "ForgotPassword" ? (
+                    <p className="login__title">
+                        {t("login.login-title_forgotPassword")}
+                    </p>
+                ) : activeTab === "resetPassword" ? (
+                    <p className="login__title">
+                        {t("login.login-title_resetPassword")}
+                    </p>
+                ) : null}
                    
                     
-                    {activeTab !== "sendCode" && (
+                    {activeTab !== "sendCode" && activeTab !=="ForgotPassword" && activeTab !== "resetPassword" && (
                         <div className="login__button-switch-all">
 
                             <div className="login__button-switch">
@@ -122,13 +85,37 @@ function Login(){
                         </div>
                     )}
                     
-                    {activeTab === "signin" ? (
-                        <>
-                        <Auth />
-                        </>
-                    ): (
-                        <Register setActiveTab={setActiveTab}/>
+                    {activeTab === "signin" && (
+                        <Auth setActiveTab={setActiveTab} />
                     )}
+
+                    {activeTab === "signup" && (
+                        <Register
+                            setActiveTab={setActiveTab}
+                            setCodeMode={setCodeMode}
+                        />
+                    )}
+                    {activeTab === "ForgotPassword" && (
+                        <Forgot_password
+                            setActiveTab={setActiveTab}
+                            setCodeMode={setCodeMode}
+                        />
+                    )}
+
+                    {activeTab === "sendCode" && (
+                        <RegisterCode
+                            setActiveTab={setActiveTab}
+                            mode={codeMode}
+                        />
+                    )}
+
+                    {activeTab === "resetPassword" && (
+                        <ResetPassword />
+                    )}
+
+                    {/* {activeTab === "ForgotPassword" && (
+                        <Forgot_password setActiveTab={setActiveTab} />
+                    )} */}
 
                 </div>
             </div>

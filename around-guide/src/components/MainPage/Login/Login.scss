@@ -1,4 +1,10 @@
-
+@use "../../Header/Header.scss" as *;
+@font-face {
+    font-family: "Ubuntu" ;
+    src: url("../../../assets/fonts/Ubuntu/Ubuntu-Medium.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+}
 $login-font: "Ubuntu", sans-serif !default;
 $main-font: "Manrope", sans-serif !default;
 
@@ -27,19 +33,25 @@ $background-color :linear-gradient(
 }
 
 .login {
+    
+    
+    background-image: url("../../../assets/for_background-test.svg"),$background-color;
+    background-position: center 0%;
+    background-size: cover;
+    
+    background-repeat: repeat;
+
+    overflow: hidden;
+
     display: flex;
     flex-direction: row;
     align-items: center;
     
-    background-image: url("../../../assets/for_background_new.svg"),$background-color;
-    background-position: center 0%;
-    background-size: cover;
+
     min-height: 100vh;
     min-width: 100%;
     width: 100%;
     
-    background-repeat: no-repeat;
-
     &__image{
         margin: clamp(20px, 5vh,60px);
     }
@@ -67,24 +79,30 @@ $background-color :linear-gradient(
         display: flex;
         justify-content: center;
         padding: 0 30px 0 30px;
-        font-size: clamp(1.5rem,3vw, 1.7rem);
+        font-size: clamp(1.5rem,3vw, 60px);
         font-family: $login-font;
         color: white;
         font-weight: 800;
     }
 
     &__form{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
         align-items: center;
  
     }
     &__title{
         margin: 15px 0 0 0;
+        width: 100%;
+        max-width: clamp(250px, 32vw, 850px);
         display: flex;
+        text-align: center;
         align-items: center;
         justify-content: center;
         margin: 15px 20px 0 20px;
         font-family: $login-font;
-        font-size: clamp(0.8rem, 2vw, 1.2rem);
+        font-size: clamp(0.8rem, 1.2vw, 2rem);
         color: white;
     }
 
@@ -99,7 +117,7 @@ $background-color :linear-gradient(
     &__button-switch{
         
         
-        width: min(50%, 440px);
+        // width: min(50%, 440px);
         border-radius: 6px;
         border: 1px solid #ffffff;
         box-sizing: border-box;
@@ -111,7 +129,10 @@ $background-color :linear-gradient(
         justify-content: center;
     }
 
-
+    &__back-button{
+        width: clamp(20px,2.5vw,72px);
+        max-width: 100%;
+    }
 
     &__tab {
         flex: 1;
@@ -126,7 +147,7 @@ $background-color :linear-gradient(
         background: transparent;
         color: #ffffff4e;
 
-        font-size: clamp(0.5rem, 2vw, 0.9rem);
+        font-size: clamp(0.7rem, 2vw, 1rem);
         font-family: $login-font;
         font-weight: 500;
 

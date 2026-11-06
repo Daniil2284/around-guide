@@ -461,6 +461,7 @@ $login-font: "Ubuntu", sans-serif !default;
         color: white;
     
         margin-top: 40px;
+        margin-bottom: 20px;
         padding: 14px 20px;
 
         border-radius: 12px;
@@ -537,6 +538,7 @@ input:-webkit-autofill:active {
         &__phone,
         &__password {
             padding: 7px;
+           
            
         }
 

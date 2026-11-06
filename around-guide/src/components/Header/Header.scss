@@ -67,6 +67,10 @@ $font-headline-desc: "Forum", sans-serif !default;
     &__logotype{
         padding-right: clamp(100px,18vw,250px);
     }
+    &__logotype-bird{
+        width: 100%;
+        max-width: clamp(100px,10vw,500px);   
+    }
 
 
     &__nav {

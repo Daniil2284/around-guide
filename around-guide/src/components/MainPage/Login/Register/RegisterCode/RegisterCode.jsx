@@ -1,8 +1,10 @@
 import { useState, useRef } from "react";
+import { useTranslation } from "react-i18next";
+
 import "./RegisterCode.scss"
 
-function RegisterCode() {
-
+function RegisterCode({ setActiveTab, mode }) {
+    const {t} = useTranslation();
     const [code, setCode] = useState(["", "", "", ""]);
 
     const inputsRef = useRef([]);
@@ -73,7 +75,17 @@ function RegisterCode() {
 
         console.log("Confirmation code:", fullCode);
 
-        // Здесь будет запрос на backend
+        if (mode === "register") {
+
+            // После успешной регистрации
+            // Здесь позже добавим авторизацию
+            window.location.href = "/profile";
+
+        } else if (mode === "forgot-password") {
+
+            setActiveTab("resetPassword");
+
+        }
     };
 
 
@@ -117,7 +129,7 @@ function RegisterCode() {
                 disabled={code.some((digit) => digit === "")}
                 onClick={handleConfirm}
             >
-                Confirm
+                {t("register-code.confirm")}
             </button>
 
         </div>

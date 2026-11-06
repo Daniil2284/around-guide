@@ -1,10 +1,9 @@
 import { useEffect, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
 import "./Header.scss";
-import searchIcon from "..//..//assets/icons/search.svg";
 import BurgerIcon from "./BurgerIcon";
-import Login from "../MainPage/Login/Login";
 import { useNavigate } from "react-router-dom";
+import logotype from "../../assets/logotype/logotype.svg";
 
 function Header() {
     const { t, i18n } = useTranslation();
@@ -72,7 +71,7 @@ function Header() {
     return (
         <header className={`header ${showHeader ? "header--visible" : "header--hidden"}`}>
             <div className="header__logotype">
-                Around Guide
+                <a href="/"><img className="header__logotype-bird" src={logotype} alt="" /></a>
             </div>
 
 

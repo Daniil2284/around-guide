@@ -76,6 +76,8 @@
         "login-title_sign-in": "Please enter your details login",
         "login-title_register": "Please enter your details register",
         "login-title_code" : "Please enter the verification code sent to your WhatsApp.",
+        "login-title_forgotPassword": "Please enter your number for reset password",
+        "login-title_resetPassword": "Create new password",
         "sign-in": "Sign in",
         "register": "Sign up"
     },
@@ -97,6 +99,20 @@
         "phone" : "Please enter the full number",
         "min" : "Password must contain at least 8 characters",
         "max" : "Password max contain at least 20 characters",
-        "symbol" : "Password contains invalid characters"
+        "symbol" : "Password contains invalid characters",
+        "latin" : "Enter the first and last name using the Latin keyboard layout."
+    },
+    "register-forgotPassword": {
+        "phone": "Number phone",
+        "enter-phone": "Please enter phone number",
+        "sendCode": "Send code"
+    },
+    "register-code": {
+        "confirm" : "Confirm"
+    },
+    "accepted_new-password": {
+        "accept" : "Change password"
     }
+
+    
 }

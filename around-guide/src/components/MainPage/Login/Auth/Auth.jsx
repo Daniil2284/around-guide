@@ -5,7 +5,9 @@ import { useTranslation } from "react-i18next";
 
 import countries from "../../../../data/countries.json"
 
-function Auth(){
+import { Link } from "react-router-dom";
+
+function Auth({setActiveTab}){
         const {t} = useTranslation();
 
         const [phone, setPhone] = useState("");
@@ -18,14 +20,34 @@ function Auth(){
 
         const [rememberPassword, setRememberPassword] = useState(false);
 
+
+        const [forgotPassword_user, setForgotPassword_user] = useState(false);
+        // const forgotPassword = (event) => {
+        //     event.preventDefault();
+        //     if (
+        //         forgotPassword_user === true
+        //     ){
+
+        //         setActiveTab("ForgotPassword");
+        //     }
+        // }
+
+        const forgotPassword = (event) => {
+            event.preventDefault();
+            setActiveTab("ForgotPassword");
+            console.log("forgot activate");
+        };
+
         const handleSendCode = () => {
             console.log("Button send clicked")
+            
         }
 
         const handleLogin = (e) => {
             e.preventDefault();
 
             console.log("Отправка формы");
+            
         };
 
     return(
@@ -158,9 +180,10 @@ function Auth(){
                                 {t("register-login.remember")}
                             </span>
                         </label>
-                        <a href="/forgot-password" className="login__forgot-password">
+                        <Link to="/forgot_password" className="login__forgot-password"
+                        onClick={forgotPassword}>
                             {t("register-login.forgot")}
-                        </a>
+                        </Link>
                     </div>
 
                 </div>

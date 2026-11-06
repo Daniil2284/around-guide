@@ -8,7 +8,7 @@ import RegisterCode from "./RegisterCode/RegisterCode";
 import Alert from "./Alert/Alert";
 
 
-function Register({setActiveTab}){
+function Register({setActiveTab, setCodeMode }){
         const {t} = useTranslation();
         const [phone, setPhone] = useState("");
         const [countryCode, setCountryCode] = useState("+62");
@@ -28,6 +28,7 @@ function Register({setActiveTab}){
         const [showAlert, setShowAlert] = useState(false);
 
         const RegularSymbol =  /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*])[A-Za-z\d!@#$%^&*]{8,16}$/;
+        const Name = /^[A-Za-z]+$/;
         const MinLengthPassword = 8;
         const MaxLengthPassword = 20;
         const MinPhoneNumber = 10;
@@ -74,6 +75,13 @@ function Register({setActiveTab}){
                 setShowAlert(true);
                 return;
             }
+            if (
+                !Name.test(name.trim()) || !Name.test(lastName.trim())
+            ) {
+                setAlertMessage(t("register-field.latin"));
+                setShowAlert(true);
+                return;
+            }
 
 
             // if (password !== confirmPassword) {
@@ -86,6 +94,7 @@ function Register({setActiveTab}){
             setShowAlert(false);
             setShowCode(true);
             setActiveTab("sendCode");
+            setCodeMode("register");
         }
 
         const handleregister = (e) => {
@@ -282,7 +291,7 @@ function Register({setActiveTab}){
                 <div className="register__accepted-btn_all">
 
                     <div className="register__accepted-btn_code">
-                        <button type="button" className="register__accepted-btn" onClick={handleSendCode}>{t("register-login.register")}</button>
+                        <button type="button" className="register__accepted-btn" onClick={handleSendCode} >{t("register-login.register")}</button>
                     </div>
                 </div>
 
